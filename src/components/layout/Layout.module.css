@@ -1,0 +1,15 @@
+/* Layout Component Styles */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remove the main wrapper styles since we're handling layout differently */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main {
+    padding: 2rem 1rem;
+  }
+} 

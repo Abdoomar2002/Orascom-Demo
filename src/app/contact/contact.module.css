@@ -1,0 +1,83 @@
+/* Contact Page Styles */
+.contactPage h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.contactIntro {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.contactContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contactForm {
+  flex: 1;
+}
+
+.contactInfo h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.infoItem {
+  margin-bottom: 2rem;
+}
+
+.infoItem h3 {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.infoItem p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.socialInfo h3 {
+  color: #007bff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.socialLinks a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contactPage h1 {
+    font-size: 2rem;
+  }
+  
+  .contactIntro {
+    font-size: 1.1rem;
+  }
+  
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+} 

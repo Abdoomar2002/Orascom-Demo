@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="473px" height="358px" viewBox="0 0 473 358" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Pattern</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.1">
+        <g id="Home-Page-2" transform="translate(202.000000, -3014.000000)" stroke="#003E7E">
+            <g id="Group-9" transform="translate(-202.000000, 0.000000)">
+                <g id="Pattern" transform="translate(0.000000, 2785.000000)">
+                    <g transform="translate(236.500000, 408.000000) scale(-1, 1) translate(-236.500000, -408.000000) translate(0.000000, 229.000000)" id="Rectangle">
+                        <path d="M196.142189,0.5 L133,111.985427 L69.8578111,0.5 L196.142189,0.5 Z"></path>
+                        <path d="M334.142189,0.5 L271,111.985427 L207.857811,0.5 L334.142189,0.5 Z"></path>
+                        <path d="M472.142189,0.5 L409,111.985427 L345.857811,0.5 L472.142189,0.5 Z"></path>
+                        <path d="M196.142189,124.5 L133,235.985427 L69.8578111,124.5 L196.142189,124.5 Z" transform="translate(133.000000, 180.500000) scale(1, -1) translate(-133.000000, -180.500000) "></path>
+                        <path d="M334.142189,124.5 L271,235.985427 L207.857811,124.5 L334.142189,124.5 Z" transform="translate(271.000000, 180.500000) scale(1, -1) translate(-271.000000, -180.500000) "></path>
+                        <path d="M472.142189,124.5 L409,235.985427 L345.857811,124.5 L472.142189,124.5 Z" transform="translate(409.000000, 180.500000) scale(1, -1) translate(-409.000000, -180.500000) "></path>
+                        <path d="M265.142189,3.5 L202,114.985427 L138.857811,3.5 L265.142189,3.5 Z" transform="translate(202.000000, 59.500000) scale(1, -1) translate(-202.000000, -59.500000) "></path>
+                        <path d="M403.142189,3.5 L340,114.985427 L276.857811,3.5 L403.142189,3.5 Z" transform="translate(340.000000, 59.500000) scale(1, -1) translate(-340.000000, -59.500000) "></path>
+                        <path d="M127.142189,121.5 L64,232.985427 L0.857811128,121.5 L127.142189,121.5 Z"></path>
+                        <path d="M265.142189,121.5 L202,232.985427 L138.857811,121.5 L265.142189,121.5 Z"></path>
+                        <path d="M403.142189,121.5 L340,232.985427 L276.857811,121.5 L403.142189,121.5 Z"></path>
+                        <path d="M334.142189,242.5 L271,353.985427 L207.857811,242.5 L334.142189,242.5 Z"></path>
+                        <path d="M472.142189,242.5 L409,353.985427 L345.857811,242.5 L472.142189,242.5 Z"></path>
+                        <path d="M403.142189,245.5 L340,356.985427 L276.857811,245.5 L403.142189,245.5 Z" transform="translate(340.000000, 301.500000) scale(1, -1) translate(-340.000000, -301.500000) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

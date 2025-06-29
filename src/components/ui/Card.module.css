@@ -1,0 +1,63 @@
+/* Card Component Styles */
+.card {
+  background: #ffffff;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+/* Card Variants */
+.default {
+  border: 1px solid #e1e5e9;
+}
+
+.elevated {
+  border: none;
+}
+
+.outlined {
+  border: 2px solid #007bff;
+  background: transparent;
+}
+
+/* Padding Options */
+.paddingSmall {
+  padding: 1rem;
+}
+
+.paddingMedium {
+  padding: 1.5rem;
+}
+
+.paddingLarge {
+  padding: 2rem;
+}
+
+/* Shadow Levels */
+.shadowNone {
+  box-shadow: none;
+}
+
+.shadowSmall {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.shadowMedium {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.shadowLarge {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Hover Effect */
+.hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .paddingLarge {
+    padding: 1.5rem;
+  }
+} 
