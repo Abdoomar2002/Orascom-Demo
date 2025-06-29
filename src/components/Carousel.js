@@ -131,10 +131,6 @@ export default function Carousel() {
                   ></div>
                 </div>
                 <div className="global-slider-next main-slider-next"><span>Next</span></div>
-                {/* Debug info - remove in production */}
-                <div style={{ color: '#fff', fontSize: '10px', marginTop: '10px' }}>
-                  {currentSlide + 1}/{totalSlides}
-                </div>
               </div>
             </div>
           </div>
