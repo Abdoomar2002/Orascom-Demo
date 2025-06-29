@@ -24,6 +24,17 @@
 .col-11{flex:0 0 91.6666666667%;max-width:91.6666666667%}
 .col-12{flex:0 0 100%;max-width:100%}
 
+/* gap */
+.gap-2{gap:1rem !important}
+.gap-3{gap:1.5rem !important}
+.gap-4{gap:2rem !important}
+.gap-5{gap:3rem !important}
+.gap-6{gap:4rem !important}
+.gap-7{gap:5rem !important}
+.gap-8{gap:6rem !important}
+.gap-9{gap:7rem !important}
+
+
 /* Order utilities */
 .order-first{order:-1}
 .order-last{order:13}

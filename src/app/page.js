@@ -1,14 +1,18 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
 import Carousel from '../components/Carousel';
 import AnimatedSection from '../components/AnimatedSection';
+import HexagonCursor from '../components/HexagonCursor';
+import useHorizontalScroll from '../hooks/useHorizontalScroll';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const scrollRef = useHorizontalScroll();
+  const newsSectionRef = useRef(null);
 
   useEffect(() => {
     // Hide preloader after 2 seconds
@@ -33,8 +37,8 @@ export default function Home() {
           </div>
           <div className="decorative-pattern bottom-140">
             {/* <img alt="" src="/wp-content/themes/orascom/assets/svg/patterns/home2.svg"/> */}
-          </div>
-        </div>
+                      </div>
+                    </div>
               )}
       {/* Main Content */}
       <main>
@@ -74,57 +78,96 @@ export default function Home() {
         </AnimatedSection>
 
         {/* News Section */}
-        <section className="home-news" id="home-news">
-          <div className="decorative-pattern to-right top-90" id="home-pattern-two">
+        <section
+          className={`${styles.homeNews} home-news`}
+          id="home-news"
+          ref={newsSectionRef}
+          style={{ cursor: 'none', position: 'relative' }}
+        >
+          <HexagonCursor sectionSelector=".home-news" />
+          <div className={styles.decorativePattern} id="home-pattern-two">
             {/* <img alt="" src="/wp-content/themes/orascom/assets/svg/patterns/home2.svg"/> */}
           </div>
-          <div className="gray-area" id="home-news-gray"></div>
-          <div className="swiper-container articles-slider units-slider">
-            <div className="center-div">
-              <div className="section-data no-pointers mb-lg-5" id="newsroom-data">
+          <div className={`${styles.grayArea} gray-area`} id="home-news-gray"></div>
+          <div className={`${styles.articlesSlider} swiper-container articles-slider units-slider`}>
+            <div className={styles.centerDiv}>
+              <div className={`${styles.sectionData} section-data no-pointers`} id="newsroom-data">
                 <h1><span>newsroom</span></h1>
                 <h2>Our Latest Updates</h2>
               </div>
             </div>
-            <div className="swiper-wrapper" role="navigation">
-              <a className="swiper-slide article-unit" href="/updates/orascom-construction-reports-backlog-of-usd-8-7-billion">
+            <div className="swiper-wrapper gap-5" role="navigation" ref={scrollRef}>
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
                 <figure>
-                  <div className="units-unit-image" data-hover="Read" data-mode="light">
+                  <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
                     <img alt="Orascom Construction Reports Backlog of USD 8.7 Billion" src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
                   </div>
-                  <figcaption className="article-unit-data" data-hover="Read">
+                  <figcaption className={`${styles.articleUnitData} article-unit-data`} data-hover="Read">
                     <p>28 May, 2025</p>
                     <h1>Orascom Construction Reports Backlog of USD 8.7 Billion and Revenue of USD 847.6 Million in Q1 2025</h1>
                   </figcaption>
                 </figure>
-              </a>
-              <a className="swiper-slide article-unit" href="/updates/orascom-construction-engie-ttc-eurus-consortium">
+              </Link>
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
                 <figure>
-                  <div className="units-unit-image" data-hover="Read" data-mode="light">
+                  <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
                     <img alt="Red Sea Wind Farm" src="https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
                   </div>
-                  <figcaption className="article-unit-data" data-hover="Read">
+                  <figcaption className={`${styles.articleUnitData} article-unit-data`} data-hover="Read">
                     <p>15 April, 2025</p>
                     <h1>Orascom Construction-ENGIE-TTC-Eurus Consortium Begins Commercial Operations of 500 MW at Red Sea Wind Farm in Egypt 6 Months Ahead of Schedule</h1>
                   </figcaption>
                 </figure>
-              </a>
-              <a className="swiper-slide article-unit" href="/updates/orascom-construction-reports-backlog-fy-2024">
+              </Link>
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
                 <figure>
-                  <div className="units-unit-image" data-hover="Read" data-mode="light">
+                  <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
                     <img alt="FY 2024 Results" src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
                   </div>
-                  <figcaption className="article-unit-data" data-hover="Read">
+                  <figcaption className={`${styles.articleUnitData} article-unit-data`} data-hover="Read">
                     <p>26 March, 2025</p>
                     <h1>Orascom Construction Reports Backlog of USD 7.6 Billion and Revenue of USD 3.3 Billion in FY 2024</h1>
                   </figcaption>
                 </figure>
-              </a>
+              </Link>
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
+                <figure>
+                  <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
+                    <img alt="Orascom Construction and Técnicas Reunidas" src="https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
+                  </div>
+                  <figcaption className={`${styles.articleUnitData} article-unit-data`} data-hover="Read">
+                    <p>24 March, 2025</p>
+                    <h1>Orascom Construction and Técnicas Reunidas to Build 1.4 GW Qurayyah IPP Extension in Saudi Arabia</h1>
+                  </figcaption>
+                </figure>
+              </Link>
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
+                <figure>
+                  <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
+                    <img alt="American University in Cairo Campus" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
+                  </div>
+                  <figcaption className={`${styles.articleUnitData} article-unit-data`} data-hover="Read">
+                    <p>24 February, 2025</p>
+                    <h1>Orascom Construction to Build the New American University in Cairo Campus</h1>
+                  </figcaption>
+                </figure>
+              </Link>
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
+                <figure>
+                  <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
+                    <img alt="New Alamein City" src="https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
+                  </div>
+                  <figcaption className={`${styles.articleUnitData} article-unit-data`} data-hover="Read">
+                    <p>09 January, 2025</p>
+                    <h1>Orascom Construction Consortium Begins First Phase of New Alamein City Development</h1>
+                  </figcaption>
+                </figure>
+              </Link>
             </div>
-            <div className="center-div">
+            <div className={styles.centerDiv}>
               <div className="row no-gutters align-items-md-start mt-5 mb-5 pb-5">
                 <div className="col-8 col-xlg-10 offset-0 offset-lg-2 offset-lg-1 d-flex justify-content-left justify-content-lg-center">
-                  <a className="cta secondary" href="/updates/"><span>Explore Newsroom</span></a>
+                  <Link className={`${styles.cta} cta secondary`} href="/portfolio"><span>Explore Newsroom</span></Link>
                 </div>
               </div>
             </div>
@@ -132,99 +175,66 @@ export default function Home() {
         </section>
 
         {/* Services Section */}
-        <section className="home-services" id="home-services">
-          <div className="decorative-pattern to-right" id="home-pattern-three">
-            {/* <img alt="" src="/wp-content/themes/orascom/assets/svg/patterns/home3.svg"/> */}
-          </div>
-          <div className="gray-area bottom" id="home-services-gray"></div>
-          <div className="center-div">
-            <div className="section-data mb-lg-5" id="services-data">
+        <section className={`${styles.homeServices} home-services`} id="home-services">
+          <div className={styles.centerDiv}>
+            <div className={`${styles.sectionData} section-data`} id="services-data">
               <h1><span>what we do</span></h1>
               <h2>Our Services</h2>
             </div>
-            <div className="home-services-content">
-              <div className="home-services-content-image" id="home-services-images">
-                <img alt="Concessions & Investments" className="" src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&w=1100&h=600&fit=crop"/>
-                <img alt="O&M and Facilities Management" className="" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&w=1100&h=600&fit=crop"/>
-                <img alt="Construction" className="active" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=1100&h=600&fit=crop"/>
-                <img alt="Building Materials" className="" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&w=1100&h=600&fit=crop"/>
-                <img alt="Equipment Services" className="" src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&w=1100&h=600&fit=crop"/>
+            <div className={styles.homeServicesContent}>
+              <div className={styles.homeServicesContentImage}>
+                <img alt="Services Background" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=1400&h=520&fit=crop" />
               </div>
-              <ul className="row no-gutters" id="home-services-units">
-                <li className="col-6 col-lg-2 d-flex flex-column justify-content-center align-items-center">
-                  <h1>Concessions & Investments</h1>
-                  <a data-hover="Explore" data-mode="light" href="/services/concessions-investments/"></a>
-                </li>
-                <li className="col-6 col-lg-2 d-flex flex-column justify-content-center align-items-center">
-                  <h1>O&M and Facilities Management</h1>
-                  <a data-hover="Explore" data-mode="light" href="/services/om-and-facilities-management/"></a>
-                </li>
-                <li className="focus col-12 col-lg-4 pr-3 pl-3 pr-lg-5 pl-lg-5 d-flex flex-column justify-content-center align-items-center">
-                  <h1>Construction</h1>
-                  <a data-hover="Explore" data-mode="light" href="/services/construction/"></a>
-                </li>
-                <li className="col-6 col-lg-2 d-flex flex-column justify-content-center align-items-center">
-                  <h1>Building Materials</h1>
-                  <a data-hover="Explore" data-mode="light" href="/services/building-materials/"></a>
-                </li>
-                <li className="col-6 col-lg-2 d-flex flex-column justify-content-center align-items-center">
-                  <h1>Equipment Services</h1>
-                  <a data-hover="Explore" data-mode="light" href="/services/equipment-services/"></a>
-                </li>
+              <ul className={styles.homeServicesUnits}>
+                <li><h1>Concessions & Investments</h1><Link href="/services" /></li>
+                <li><h1>O&M and Facilities Management</h1><Link href="/services" /></li>
+                <li><h1>Construction</h1><Link href="/services" /></li>
+                <li><h1>Building Materials</h1><Link href="/services" /></li>
+                <li><h1>Equipment Services</h1><Link href="/services" /></li>
               </ul>
             </div>
           </div>
         </section>
 
         {/* Featured Projects Section */}
-        <section className="featured-projects dark d-flex flex-column justify-content-center align-items-center pt-5 pb-5" id="featured-projects">
-          <div className="decorative-pattern top-0" id="home-pattern-four">
-            {/* <img alt="" src="/wp-content/themes/orascom/assets/svg/patterns/home4.svg"/> */}
-          </div>
-          <div className="center-div no-pointers projects-higher-level mb-3 mb-lg-0">
-            <div className="section-data mb-lg-5" id="featured-projects-data">
+        <section className={`${styles.featuredProjects} featured-projects dark`} id="featured-projects">
+          <div className={styles.centerDiv}>
+            <div className={`${styles.sectionData} section-data`} id="featured-projects-data">
               <h1><span>featured projects</span></h1>
               <h2>Our Work</h2>
             </div>
           </div>
-          <div className="swiper-container projects-slider overflow-hidden-slides">
-            <div className="swiper-wrapper" role="navigation">
-              <a className="swiper-slide project-unit" data-hover="View Project" data-mode="light" href="/projects/project-wave/">
-                <figure>
-                  <img alt="Project Wave" src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&w=580&h=330&fit=crop"/>
-                  <figcaption className="project-unit-data-holder">
-                    <h1>Project Wave</h1>
-                  </figcaption>
-                </figure>
-              </a>
-              <a className="swiper-slide project-unit" data-hover="View Project" data-mode="light" href="/projects/bahr-el-baqr-wastewater-treatment-plant/">
-                <figure>
-                  <img alt="Bahr El Baqr Wastewater Treatment Plant" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&w=580&h=330&fit=crop"/>
-                  <figcaption className="project-unit-data-holder">
-                    <h1>Bahr El Baqr Wastewater Treatment Plant</h1>
-                  </figcaption>
-                </figure>
-              </a>
-              <a className="swiper-slide project-unit" data-hover="View Project" data-mode="light" href="/projects/grand-egyptian-museum/">
-                <figure>
-                  <img alt="Grand Egyptian Museum" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=580&h=330&fit=crop"/>
-                  <figcaption className="project-unit-data-holder">
-                    <h1>Grand Egyptian Museum</h1>
-                  </figcaption>
-                </figure>
-              </a>
+          <div className={styles.projectsSlider}>
+            <div className="swiper-wrapper">
+              <Link className={styles.projectUnit} href="/portfolio">
+                <img alt="Bahr El Baqr Wastewater Treatment Plant" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&w=918&h=512&fit=crop" />
+                <div className={styles.projectUnitDataHolder}>
+                  <h1>Bahr El Baqr Wastewater Treatment Plant</h1>
+                </div>
+              </Link>
+              <Link className={styles.projectUnit} href="/portfolio">
+                <img alt="High-Speed Rail" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&w=918&h=512&fit=crop" />
+                <div className={styles.projectUnitDataHolder}>
+                  <h1>High-Speed Rail</h1>
+                </div>
+              </Link>
+              <Link className={styles.projectUnit} href="/portfolio">
+                <img alt="Grand Egyptian Museum" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=918&h=512&fit=crop" />
+                <div className={styles.projectUnitDataHolder}>
+                  <h1>Grand Egyptian Museum</h1>
+                </div>
+              </Link>
             </div>
           </div>
-          <div className="projects-higher-level container">
-            <div className="row no-gutters align-items-md-start mt-5">
+          <div className={styles.centerDiv}>
+            <div className="row no-gutters align-items-md-start mt-5 mb-5 pb-5">
               <div className="col-8 col-xlg-10 offset-0 offset-lg-2 offset-lg-1 d-flex justify-content-left justify-content-lg-center">
-                <a className="cta white" data-mode="light" href="/projects/"><span>View All Projects</span></a>
+                <Link className={`${styles.cta} cta white`} href="/portfolio"><span>View All Projects</span></Link>
               </div>
             </div>
           </div>
         </section>
       </main>
-
     </div>
   );
 }

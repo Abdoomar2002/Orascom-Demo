@@ -30,11 +30,7 @@ export default function Header() {
   }
 
   return (
-    <div className={styles.header}>
-        <div className={styles.ticker}>
-          <span>EGP 315.00 <span className={styles.arrow}>▲</span></span>
-          <span>USD 5.99 <span className={styles.arrow}>▲</span></span>
-        </div>
+
     <header className={styles.header}>
       <div className={styles.inner}>
         <div className={styles.logoNav}>
@@ -52,6 +48,6 @@ export default function Header() {
         </div>
       </div>
     </header>
-            </div>
+           
   )
 } 
