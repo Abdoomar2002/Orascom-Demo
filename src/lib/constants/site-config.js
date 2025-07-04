@@ -13,32 +13,14 @@ export const siteConfig = {
     main: [
       {
         name: "About Us",
-        href: "/about",
-        children: [
-          { name: "At a Glance", href: "/about" },
-          { name: "History", href: "/about#history" },
-          { name: "Strategy", href: "/about#strategy" },
-          { name: "Global Footprint", href: "/about#global" },
-          { name: "Brands", href: "/about#brands" },
-          { name: "Leadership", href: "/about#leadership" }
-        ]
+        href: "/about"
       },
       {
         name: "Services",
-        href: "/services",
-        children: [
-          { name: "Construction", href: "/services/construction" },
-          { name: "Concessions & Investments", href: "/services/concessions-investments" },
-          { name: "O&M and Facilities Management", href: "/services/OM-and-Facilities-Management" },
-          { name: "Building Materials", href: "/services/building-materials" },
-          { name: "Equipment Services", href: "/services/Equipment-Services" }
-        ]
+        href: "/services"
       },
-      { name: "Projects", href: "/projects" },
-      { name: "Investors", href: "/investors-updates" },
-      { name: "Sustainability", href: "/sustainability" },
-      { name: "NewsRoom", href: "/updates" },
-      { name: "Careers", href: "https://careers.orascom.com" }
+      { name: "Portfolio", href: "/portfolio" },
+      { name: "Contact", href: "/contact" }
     ]
   },
   hero: {
@@ -122,74 +104,98 @@ export const siteConfig = {
 
 export const SERVICES = [
   {
-    id: 'web-development',
-    title: 'Web Development',
-    description: 'Custom websites and web applications built with modern technologies.',
+    id: 'infrastructure',
+    title: 'Infrastructure',
+    description: 'Large-scale infrastructure projects including roads, bridges, tunnels, and urban development initiatives.',
     features: [
-      'Custom Website Development',
-      'E-commerce Solutions',
-      'Web Application Development',
-      'API Development & Integration',
-      'Website Maintenance & Support'
+      'Highway & Road Construction',
+      'Bridge & Tunnel Engineering',
+      'Airport & Port Development',
+      'Urban Infrastructure',
+      'Water & Wastewater Systems'
     ]
   },
   {
-    id: 'digital-marketing',
-    title: 'Digital Marketing',
-    description: 'Comprehensive digital marketing strategies to grow your business.',
+    id: 'power-energy',
+    title: 'Power & Energy',
+    description: 'Comprehensive power generation and energy infrastructure solutions for sustainable development.',
     features: [
-      'Search Engine Optimization (SEO)',
-      'Pay-Per-Click Advertising (PPC)',
-      'Social Media Marketing',
-      'Content Marketing',
-      'Email Marketing Campaigns'
+      'Power Plant Construction',
+      'Renewable Energy Projects',
+      'Transmission Networks',
+      'Energy Storage Systems',
+      'Grid Infrastructure'
     ]
   },
   {
-    id: 'ui-ux-design',
-    title: 'UI/UX Design',
-    description: 'We design intuitive and engaging user experiences that delight users and drive business results.',
+    id: 'industrial',
+    title: 'Industrial',
+    description: 'Complex industrial facilities and manufacturing plants designed for optimal efficiency and safety.',
     features: [
-      'User Interface Design',
-      'User Experience Design',
-      'Wireframing & Prototyping',
-      'User Research & Testing',
-      'Design System Creation'
+      'Manufacturing Facilities',
+      'Petrochemical Plants',
+      'Mining Infrastructure',
+      'Steel & Cement Plants',
+      'Process Engineering'
     ]
   },
   {
-    id: 'consulting',
-    title: 'Consulting',
-    description: 'Our expert consultants provide strategic guidance to help you make informed decisions.',
+    id: 'commercial',
+    title: 'Commercial',
+    description: 'High-end commercial developments including office buildings, retail centers, and mixed-use projects.',
     features: [
-      'Digital Strategy Consulting',
-      'Technology Assessment',
-      'Process Optimization',
-      'Team Training & Workshops',
-      'Project Management'
+      'Office Buildings',
+      'Shopping Centers',
+      'Mixed-Use Developments',
+      'Hospitality Projects',
+      'Educational Facilities'
+    ]
+  },
+  {
+    id: 'residential',
+    title: 'Residential',
+    description: 'Premium residential developments and community projects that enhance quality of life.',
+    features: [
+      'Luxury Residential Towers',
+      'Gated Communities',
+      'Affordable Housing',
+      'Master-Planned Communities',
+      'Social Housing Projects'
+    ]
+  },
+  {
+    id: 'engineering-services',
+    title: 'Engineering Services',
+    description: 'Comprehensive engineering solutions from concept to completion with cutting-edge technology.',
+    features: [
+      'Project Management',
+      'Design Engineering',
+      'Construction Management',
+      'Quality Assurance',
+      'Technical Consulting'
     ]
   }
 ]
 
 export const COMPANY_VALUES = [
   {
-    id: 'innovation',
-    title: 'Innovation',
-    description: 'We constantly explore new technologies and approaches to deliver the best solutions.'
-  },
-  {
     id: 'excellence',
     title: 'Excellence',
-    description: 'We maintain the highest standards in everything we do, from code quality to client service.'
+    description: 'We maintain the highest standards in project delivery, safety, and quality management across all our operations.'
+  },
+  {
+    id: 'innovation',
+    title: 'Innovation',
+    description: 'We embrace cutting-edge technology and innovative construction methods to deliver superior results.'
+  },
+  {
+    id: 'sustainability',
+    title: 'Sustainability',
+    description: 'We are committed to sustainable development and environmental responsibility in all our projects.'
   },
   {
     id: 'integrity',
     title: 'Integrity',
-    description: 'We build trust through honest communication and reliable delivery.'
-  },
-  {
-    id: 'collaboration',
-    title: 'Collaboration',
-    description: 'We work closely with our clients to ensure their vision becomes reality.'
+    description: 'We operate with transparency, ethical business practices, and unwavering commitment to our stakeholders.'
   }
 ] 

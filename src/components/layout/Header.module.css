@@ -29,30 +29,17 @@
 
 .logo {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin-right: 40px;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   font-weight: 900;
   letter-spacing: 2px;
   color: #fff;
-  font-size: 2rem;
   line-height: 1;
 }
-.logoText {
-  font-size: 2rem;
-  font-weight: 900;
-  letter-spacing: 2px;
-  color: #fff;
-  line-height: 1;
-}
-.logoSub {
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  color: #fff;
-  margin-top: 2px;
-  line-height: 1;
+
+.logoImage {
+  margin-right: 15px;
 }
 
 .nav {
@@ -116,10 +103,15 @@
   .header, .inner {
     height: 60px;
   }
-  .logoText {
+  .logoImage {
+    width: 40px !important;
+    height: 40px !important;
+    margin-right: 10px;
+  }
+  .logoMainText {
     font-size: 1.2rem;
   }
-  .logoSub {
-    font-size: 0.6rem;
+  .logoSubText {
+    font-size: 0.5rem;
   }
 } 

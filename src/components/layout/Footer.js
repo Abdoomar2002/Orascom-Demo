@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { siteConfig } from '@/lib/constants/site-config'
 import styles from './Footer.module.css'
 
@@ -10,11 +11,12 @@ export default function Footer() {
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>
             <div className={styles.logo}>
-              <img
-                src="/wp-content/uploads/Orascom_Construction-Logo.wine_.png"
-                alt={siteConfig.name}
-                width={200}
+              <Image
+                src="/p-logo.png"
+                alt="Logo"
+                width={60}
                 height={60}
+                className={styles.logoImage}
               />
             </div>
             <p className={styles.description}>
@@ -39,21 +41,19 @@ export default function Footer() {
             <ul className={styles.footerLinks}>
               <li><Link href="/about">About Us</Link></li>
               <li><Link href="/services">Services</Link></li>
-              <li><Link href="/projects">Projects</Link></li>
-              <li><Link href="/investors-updates">Investors</Link></li>
-              <li><Link href="/sustainability">Sustainability</Link></li>
-              <li><Link href="/updates">News</Link></li>
+              <li><Link href="/portfolio">Portfolio</Link></li>
+              <li><Link href="/contact">Contact</Link></li>
             </ul>
           </div>
 
           <div className={styles.footerSection}>
             <h3>Services</h3>
             <ul className={styles.footerLinks}>
-              <li><Link href="/services/construction">Construction</Link></li>
-              <li><Link href="/services/concessions-investments">Concessions & Investments</Link></li>
-              <li><Link href="/services/OM-and-Facilities-Management">O&M and Facilities Management</Link></li>
-              <li><Link href="/services/building-materials">Building Materials</Link></li>
-              <li><Link href="/services/Equipment-Services">Equipment Services</Link></li>
+              <li><Link href="/services">Infrastructure</Link></li>
+              <li><Link href="/services">Power & Energy</Link></li>
+              <li><Link href="/services">Industrial</Link></li>
+              <li><Link href="/services">Commercial</Link></li>
+              <li><Link href="/services">Residential</Link></li>
             </ul>
           </div>
 

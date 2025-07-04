@@ -9,11 +9,9 @@ import styles from './Header.module.css'
 const NAV = [
   { name: 'ABOUT US', href: '/about' },
   { name: 'SERVICES', href: '/services' },
+  { name: 'ACTIVITIES', href: '/activities' },
   { name: 'PROJECTS', href: '/projects' },
-  { name: 'INVESTORS', href: '/investors-updates' },
-  { name: 'SUSTAINABILITY', href: '/sustainability' },
-  { name: 'NEWSROOM', href: '/updates' },
-  { name: 'CAREERS', href: 'https://careers.orascom.com' },
+  { name: 'CONTACT', href: '/contact' },
 ]
 
 // Single Responsibility: Handle header/navigation display and interaction
@@ -35,8 +33,13 @@ export default function Header() {
       <div className={styles.inner}>
         <div className={styles.logoNav}>
           <div className={styles.logo}>
-            <span className={styles.logoText}>ORASCOM</span>
-            <span className={styles.logoSub}>CONSTRUCTION</span>
+            <Image
+              src="/p-logo.png"
+              alt="Logo"
+              width={60}
+              height={60}
+              className={styles.logoImage}
+            />
           </div>
           <nav className={styles.nav}>
             {NAV.map((item) => (

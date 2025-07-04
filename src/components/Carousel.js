@@ -6,6 +6,11 @@ import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
+// Register GSAP plugins
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin();
+}
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';

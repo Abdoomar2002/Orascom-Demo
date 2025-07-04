@@ -71,10 +71,12 @@ export default function ContactForm({ className = '' }) {
             className={styles.select}
           >
             <option value="">Select a subject</option>
-            <option value="web-development">Web Development</option>
-            <option value="digital-marketing">Digital Marketing</option>
-            <option value="ui-ux-design">UI/UX Design</option>
-            <option value="consulting">Consulting</option>
+            <option value="project-inquiry">Project Inquiry</option>
+            <option value="partnership">Partnership Opportunity</option>
+            <option value="general-information">General Information</option>
+            <option value="careers">Career Opportunities</option>
+            <option value="investor-relations">Investor Relations</option>
+            <option value="media-inquiry">Media Inquiry</option>
             <option value="other">Other</option>
           </select>
         </div>

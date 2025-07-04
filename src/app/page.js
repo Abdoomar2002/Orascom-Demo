@@ -9,17 +9,36 @@ import AnimatedSection from '../components/AnimatedSection';
 import HexagonCursor from '../components/HexagonCursor';
 import useHorizontalScroll from '../hooks/useHorizontalScroll';
 
+const featuredProjects = [
+  {
+    title: "Bahr El Baqr Wastewater Treatment Plant",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&w=918&h=512&fit=crop",
+    href: "/projects/bahr-el-baqr"
+  },
+  {
+    title: "High-Speed Rail",
+    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&w=918&h=512&fit=crop",
+    href: "/projects/high-speed-rail"
+  },
+  {
+    title: "Grand Egyptian Museum",
+    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=918&h=512&fit=crop",
+    href: "/projects/grand-egyptian-museum"
+  }
+];
+
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isClient, setIsClient] = useState(false);
   const scrollRef = useHorizontalScroll();
   const newsSectionRef = useRef(null);
 
   useEffect(() => {
+    setIsClient(true);
     // Hide preloader after 2 seconds
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 2000);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -84,7 +103,7 @@ export default function Home() {
           ref={newsSectionRef}
           style={{ cursor: 'none', position: 'relative' }}
         >
-          <HexagonCursor sectionSelector=".home-news" />
+          {isClient && <HexagonCursor sectionSelector=".home-news" />}
           <div className={styles.decorativePattern} id="home-pattern-two">
             {/* <img alt="" src="/wp-content/themes/orascom/assets/svg/patterns/home2.svg"/> */}
           </div>
@@ -96,8 +115,8 @@ export default function Home() {
                 <h2>Our Latest Updates</h2>
               </div>
             </div>
-            <div className="swiper-wrapper gap-5" role="navigation" ref={scrollRef}>
-              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
+            <div className="swiper-wrapper gap-5" role="navigation" ref={isClient ? scrollRef : null}>
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/about" data-hover="Read" data-mode="light">
                 <figure>
                   <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
                     <img alt="Orascom Construction Reports Backlog of USD 8.7 Billion" src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
@@ -108,7 +127,7 @@ export default function Home() {
                   </figcaption>
                 </figure>
               </Link>
-              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/about" data-hover="Read" data-mode="light">
                 <figure>
                   <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
                     <img alt="Red Sea Wind Farm" src="https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
@@ -119,7 +138,7 @@ export default function Home() {
                   </figcaption>
                 </figure>
               </Link>
-              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/about" data-hover="Read" data-mode="light">
                 <figure>
                   <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
                     <img alt="FY 2024 Results" src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
@@ -130,7 +149,7 @@ export default function Home() {
                   </figcaption>
                 </figure>
               </Link>
-              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/about" data-hover="Read" data-mode="light">
                 <figure>
                   <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
                     <img alt="Orascom Construction and Técnicas Reunidas" src="https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
@@ -141,7 +160,7 @@ export default function Home() {
                   </figcaption>
                 </figure>
               </Link>
-              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/about" data-hover="Read" data-mode="light">
                 <figure>
                   <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
                     <img alt="American University in Cairo Campus" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
@@ -152,7 +171,7 @@ export default function Home() {
                   </figcaption>
                 </figure>
               </Link>
-              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/portfolio" data-hover="Read" data-mode="light">
+              <Link className={`${styles.articleUnit} swiper-slide article-unit`} href="/about" data-hover="Read" data-mode="light">
                 <figure>
                   <div className={`${styles.unitsUnitImage} units-unit-image`} data-hover="Read" data-mode="light">
                     <img alt="New Alamein City" src="https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop"/>
@@ -167,7 +186,7 @@ export default function Home() {
             <div className={styles.centerDiv}>
               <div className="row no-gutters align-items-md-start mt-5 mb-5 pb-5">
                 <div className="col-8 col-xlg-10 offset-0 offset-lg-2 offset-lg-1 d-flex justify-content-left justify-content-lg-center">
-                  <Link className={`${styles.cta} cta secondary`} href="/portfolio"><span>Explore Newsroom</span></Link>
+                  <Link className={`${styles.cta} cta secondary`} href="/about"><span>Explore Newsroom</span></Link>
                 </div>
               </div>
             </div>
@@ -186,11 +205,11 @@ export default function Home() {
                 <img alt="Services Background" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=1400&h=520&fit=crop" />
               </div>
               <ul className={styles.homeServicesUnits}>
-                <li><h1>Concessions & Investments</h1><Link href="/services" /></li>
-                <li><h1>O&M and Facilities Management</h1><Link href="/services" /></li>
-                <li><h1>Construction</h1><Link href="/services" /></li>
-                <li><h1>Building Materials</h1><Link href="/services" /></li>
-                <li><h1>Equipment Services</h1><Link href="/services" /></li>
+                <li><h1>Infrastructure</h1><Link href="/services" /></li>
+                <li><h1>Power & Energy</h1><Link href="/services" /></li>
+                <li><h1>Industrial</h1><Link href="/services" /></li>
+                <li><h1>Commercial</h1><Link href="/services" /></li>
+                <li><h1>Residential</h1><Link href="/services" /></li>
               </ul>
             </div>
           </div>
@@ -206,30 +225,20 @@ export default function Home() {
           </div>
           <div className={styles.projectsSlider}>
             <div className="swiper-wrapper">
-              <Link className={styles.projectUnit} href="/portfolio">
-                <img alt="Bahr El Baqr Wastewater Treatment Plant" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&w=918&h=512&fit=crop" />
-                <div className={styles.projectUnitDataHolder}>
-                  <h1>Bahr El Baqr Wastewater Treatment Plant</h1>
-                </div>
-              </Link>
-              <Link className={styles.projectUnit} href="/portfolio">
-                <img alt="High-Speed Rail" src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&w=918&h=512&fit=crop" />
-                <div className={styles.projectUnitDataHolder}>
-                  <h1>High-Speed Rail</h1>
-                </div>
-              </Link>
-              <Link className={styles.projectUnit} href="/portfolio">
-                <img alt="Grand Egyptian Museum" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=918&h=512&fit=crop" />
-                <div className={styles.projectUnitDataHolder}>
-                  <h1>Grand Egyptian Museum</h1>
-                </div>
-              </Link>
+              {featuredProjects.map(project => (
+                <Link className={styles.projectUnit} href={project.href} key={project.title}>
+                  <img alt={project.title} src={project.image} />
+                  <div className={styles.projectUnitDataHolder}>
+                    <h1>{project.title}</h1>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
           <div className={styles.centerDiv}>
             <div className="row no-gutters align-items-md-start mt-5 mb-5 pb-5">
               <div className="col-8 col-xlg-10 offset-0 offset-lg-2 offset-lg-1 d-flex justify-content-left justify-content-lg-center">
-                <Link className={`${styles.cta} cta white`} href="/portfolio"><span>View All Projects</span></Link>
+                <Link className={`${styles.cta} cta white`} href="/projects"><span>View All Projects</span></Link>
               </div>
             </div>
           </div>

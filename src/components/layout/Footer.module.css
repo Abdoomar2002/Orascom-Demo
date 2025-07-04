@@ -26,12 +26,41 @@
 }
 
 .logo {
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
 }
 
-.logo img {
-  height: 50px;
-  width: auto;
+.logoImage {
+  margin-right: 15px;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #fff;
+  line-height: 1;
+}
+
+.logoText span:first-child {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #fff;
+  line-height: 1;
+}
+
+.logoText span:last-child {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #fff;
+  margin-top: 2px;
+  line-height: 1;
 }
 
 .description {
@@ -135,5 +164,19 @@
 
   .container {
     padding: 0 15px;
+  }
+  
+  .logoImage {
+    width: 50px !important;
+    height: 50px !important;
+    margin-right: 12px;
+  }
+  
+  .logoText span:first-child {
+    font-size: 1.3rem;
+  }
+  
+  .logoText span:last-child {
+    font-size: 0.5rem;
   }
 } 
