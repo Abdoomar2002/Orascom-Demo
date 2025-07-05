@@ -20,19 +20,19 @@ import 'swiper/css/effect-fade';
 const carouselData = [
   {
     id: 1,
-    backgroundImage: 'https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    backgroundImage: '/landing1.jpg',
     title: 'We help you Build Your dreams',
     subtitle: 'Our professional team is always at your service. We practice individual approach to every client, whether it us a large or a small project. Learn more about our services!'
   },
   {
     id: 2,
-    backgroundImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2076&q=80',
+    backgroundImage: '/landing2.jpg',
     title: 'Reliable Service for Safe Homes & Offices',
     subtitle: 'Our professional team is always at your service. We practice individual approach to every client, whether it us a large or a small project. Learn more about our services!'
   },
   {
     id: 3,
-    backgroundImage: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    backgroundImage: '/landing3.jpg',
     title: 'Precise Design in Every Construction Detail',
     subtitle: 'Our professional team is always at your service. We practice individual approach to every client, whether it us a large or a small project. Learn more about our services!'
   }
