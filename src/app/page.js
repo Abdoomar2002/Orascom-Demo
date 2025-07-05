@@ -158,6 +158,7 @@ export default function Home() {
           ></div>
           <div
             className={`${styles.articlesSlider} swiper-container articles-slider units-slider`}
+            style={{ padding: "3% 7%" }}
           >
             <div className={styles.centerDiv}>
               <div

@@ -1354,12 +1354,14 @@ a.secondary {
   font-size: 2.5rem;
   font-weight: 700;
   color: #333;
-  margin: 0 0 10px 0;
+
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
 }
 
 .sectionData h1 span {
+  letter-spacing: 5px;
+  line-height: normal;
   color: #007bff;
 }
 
@@ -1547,11 +1549,9 @@ a.secondary {
   gap: 40px;
   width: auto;
   overflow-x: scroll !important;
-  
 }
-.scrollable
-{
-  overflow-x:scroll !important;
+.scrollable {
+  overflow-x: scroll !important;
 }
 
 .projectUnit {
@@ -1845,7 +1845,6 @@ a.secondary {
   padding: 20px 0;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
- 
 }
 
 .articlesSlider .swiper-wrapper::-webkit-scrollbar {
@@ -1896,214 +1895,214 @@ a.secondary {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   flex: 0 0 350px; /* Fixed width for horizontal scroll */
-  
 
-.articleUnit:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.articleUnit figure {
-  margin: 0;
-  position: relative;
-}
-
-/* Hexagon cursor follower */
-.hexagon-cursor {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: all 0.2s ease;
-  opacity: 0;
-}
-
-.hexagon-cursor.show {
-  opacity: 1;
-}
-
-.hexagon-shape {
-  position: relative;
-  width: 60px;
-  height: 34.64px;
-  margin: 12.68px 0;
-  transform: rotate(0deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hexagon-shape:before,
-.hexagon-shape:after {
-  content: "";
-  position: absolute;
-  width: 0;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-}
-
-.hexagon-shape:before {
-  bottom: 100%;
-  border-bottom: 17.32px solid;
-  border-bottom-color: inherit;
-}
-
-.hexagon-shape:after {
-  top: 100%;
-  border-top: 17.32px solid;
-  border-top-color: inherit;
-}
-
-.hexagon-shape.drag {
-  background-color: #f26722;
-  border-color: #f26722;
-}
-
-.hexagon-shape.drag:before,
-.hexagon-shape.drag:after {
-  border-bottom-color: #f26722;
-  border-top-color: #f26722;
-}
-
-.hexagon-shape.read {
-  background-color: white;
-  border-color: white;
-}
-
-.hexagon-shape.read:before,
-.hexagon-shape.read:after {
-  border-bottom-color: white;
-  border-top-color: white;
-}
-
-.hexagon-text {
-  position: absolute;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  z-index: 2;
-}
-
-.hexagon-shape.drag .hexagon-text {
-  color: white;
-}
-
-.hexagon-shape.read .hexagon-text {
-  color: #003e7e;
-}
-
-/* Project card layout */
-.projectUnit {
-  display: block;
-  text-decoration: none;
-  color: white;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 8px;
-  overflow: scroll;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.projectUnit:hover {
-  transform: translateY(-5px);
-}
-
-/* Section data styling */
-.sectionData {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.sectionData h1 {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #f26722;
-  margin: 0 0 10px 0;
-}
-
-.sectionData h1 span {
-  color: #f26722;
-}
-
-.sectionData h2 {
-  font-size: 36px;
-  font-weight: 700;
-  color: #003e7e;
-  margin: 0;
-}
-
-.featuredProjects .sectionData h1,
-.featuredProjects .sectionData h2 {
-  color: white;
-}
-
-/* CTA Button styling */
-.cta {
-  display: inline-block;
-  background: transparent;
-  color: #f26722;
-  border: 2px solid #f26722;
-  padding: 15px 30px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-}
-
-.cta:hover {
-  background: #f26722;
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(242, 103, 34, 0.4);
-}
-
-.cta.white {
-  color: white;
-  border-color: white;
-}
-
-.cta.white:hover {
-  background: white;
-  color: #003e7e;
-}
-
-/* Responsive fixes */
-@media (max-width: 768px) {
-  .articlesSlider .swiper-wrapper {
-    gap: 20px;
+  .articleUnit:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   }
 
-  .articleUnit {
-    flex: 0 0 280px; /* Smaller width on mobile */
+  .articleUnit figure {
+    margin: 0;
+    position: relative;
   }
 
-  .projectsSlider .swiper-wrapper {
-    grid-template-columns: 1fr;
-    gap: 20px;
+  /* Hexagon cursor follower */
+  .hexagon-cursor {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: all 0.2s ease;
+    opacity: 0;
   }
 
-  .unitsUnitImage,
-  .projectUnit figure {
-    height: 250px;
+  .hexagon-cursor.show {
+    opacity: 1;
+  }
+
+  .hexagon-shape {
+    position: relative;
+    width: 60px;
+    height: 34.64px;
+    margin: 12.68px 0;
+    transform: rotate(0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hexagon-shape:before,
+  .hexagon-shape:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+  }
+
+  .hexagon-shape:before {
+    bottom: 100%;
+    border-bottom: 17.32px solid;
+    border-bottom-color: inherit;
+  }
+
+  .hexagon-shape:after {
+    top: 100%;
+    border-top: 17.32px solid;
+    border-top-color: inherit;
+  }
+
+  .hexagon-shape.drag {
+    background-color: #f26722;
+    border-color: #f26722;
+  }
+
+  .hexagon-shape.drag:before,
+  .hexagon-shape.drag:after {
+    border-bottom-color: #f26722;
+    border-top-color: #f26722;
+  }
+
+  .hexagon-shape.read {
+    background-color: white;
+    border-color: white;
+  }
+
+  .hexagon-shape.read:before,
+  .hexagon-shape.read:after {
+    border-bottom-color: white;
+    border-top-color: white;
+  }
+
+  .hexagon-text {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 2;
+  }
+
+  .hexagon-shape.drag .hexagon-text {
+    color: white;
+  }
+
+  .hexagon-shape.read .hexagon-text {
+    color: #003e7e;
+  }
+
+  /* Project card layout */
+  .projectUnit {
+    display: block;
+    text-decoration: none;
+    color: white;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    overflow: scroll;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .projectUnit:hover {
+    transform: translateY(-5px);
+  }
+
+  /* Section data styling */
+  .sectionData {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .sectionData h1 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f26722;
+    margin: 0 0 10px 0;
+  }
+
+  .sectionData h1 span {
+    color: #f26722;
   }
 
   .sectionData h2 {
-    font-size: 28px;
+    font-size: 36px;
+    font-weight: 700;
+    color: #003e7e;
+    margin: 0;
   }
 
-  .homeServices .homeServicesContent {
-    height: 400px;
+  .featuredProjects .sectionData h1,
+  .featuredProjects .sectionData h2 {
+    color: white;
   }
 
-  .featuredProjects {
-    height: auto;
-    min-height: 600px;
-    padding: 60px 0;
+  /* CTA Button styling */
+  .cta {
+    display: inline-block;
+    background: transparent;
+    color: #f26722;
+    border: 2px solid #f26722;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .cta:hover {
+    background: #f26722;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(242, 103, 34, 0.4);
+  }
+
+  .cta.white {
+    color: white;
+    border-color: white;
+  }
+
+  .cta.white:hover {
+    background: white;
+    color: #003e7e;
+  }
+
+  /* Responsive fixes */
+  @media (max-width: 768px) {
+    .articlesSlider .swiper-wrapper {
+      gap: 20px;
+    }
+
+    .articleUnit {
+      flex: 0 0 280px; /* Smaller width on mobile */
+    }
+
+    .projectsSlider .swiper-wrapper {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .unitsUnitImage,
+    .projectUnit figure {
+      height: 250px;
+    }
+
+    .sectionData h2 {
+      font-size: 28px;
+    }
+
+    .homeServices .homeServicesContent {
+      height: 400px;
+    }
+
+    .featuredProjects {
+      height: auto;
+      min-height: 600px;
+      padding: 60px 0;
+    }
   }
 }
