@@ -8,6 +8,7 @@ import Carousel from '../components/Carousel';
 import AnimatedSection from '../components/AnimatedSection';
 import HexagonCursor from '../components/HexagonCursor';
 import useHorizontalScroll from '../hooks/useHorizontalScroll';
+import Activities from '../components/sections/Activities';
 
 const featuredProjects = [
   {
@@ -192,17 +193,16 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Services Section */}
-        <section className={`${styles.homeServices} home-services`} id="home-services">
+     {/* Services Section */}
+   <section className={`${styles.homeServices} home-services`} id="home-services">
           <div className={styles.centerDiv}>
             <div className={`${styles.sectionData} section-data`} id="services-data">
               <h1><span>what we do</span></h1>
-              <h2>Our Services</h2>
+              <h2>Services</h2>
             </div>
             <div className={styles.homeServicesContent}>
               <div className={styles.homeServicesContentImage}>
-                <img alt="Services Background" src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=1400&h=520&fit=crop" />
+                <img alt="Services Background" src="/services.jpg" />
               </div>
               <ul className={styles.homeServicesUnits}>
                 <li><h1>Infrastructure</h1><Link href="/services" /></li>
@@ -214,6 +214,9 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Activities Section */}
+        <Activities />
 
         {/* Featured Projects Section */}
         <section className={`${styles.featuredProjects} featured-projects dark`} id="featured-projects">
