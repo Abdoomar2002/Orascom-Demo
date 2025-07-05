@@ -7,6 +7,7 @@ import styles from "./page.module.css";
 import Carousel from "../components/Carousel";
 import AnimatedSection from "../components/AnimatedSection";
 import useHorizontalScroll from "../hooks/useHorizontalScroll";
+import ProjectsCarousel from "@/components/Projects";
 
 const featuredProjects = [
   {
@@ -411,50 +412,36 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Featured Projects Section */}
-        <section
-          className={`${styles.featuredProjects} featured-projects dark`}
-          id="featured-projects"
-        >
-          <div className={styles.centerDiv}>
-            <div
-              className={`${styles.sectionData} section-data`}
-              id="featured-projects-data"
-            >
-              <h1>
-                <span>featured projects</span>
-              </h1>
-              <h2>Our Work</h2>
-            </div>
-          </div>
-          <div className={styles.projectsSlider}>
-            <div className="swiper-wrappe scrollabler">
-              {featuredProjects.map((project) => (
-                <Link
-                  className={styles.projectUnit}
-                  href={project.href}
-                  key={project.title}
-                >
-                  <img alt={project.title} src={project.image} />
-                  <div className={styles.projectUnitDataHolder}>
-                    <h1>{project.title}</h1>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div className={styles.centerDiv}>
-            <div className="row no-gutters align-items-md-start mt-5 mb-5 pb-5">
-              <div className="col-8 col-xlg-10 offset-0 offset-lg-2 offset-lg-1 d-flex justify-content-left justify-content-lg-center">
-                <Link className={`${styles.cta} cta white`} href="/projects">
-                  <span>View All Projects</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* Projects Section */}
+        <Carousel carouselData={Data} />
       </main>
     </div>
   );
 }
+
+const Data = [
+  {
+    id: 1,
+    image: "/projects/project1.jpg",
+    title: "Project Wave",
+    link: "/projects/project-wave",
+  },
+  {
+    id: 2,
+    image: "/projects/project2.jpg",
+    title: "Bahr El Baqr Wastewater Treatment Plant",
+    link: "/projects/bahr-el-baqr",
+  },
+  {
+    id: 3,
+    image: "/projects/project3.jpg",
+    title: "High-Speed Rail",
+    link: "/projects/high-speed-rail",
+  },
+  {
+    id: 4,
+    image: "/projects/project4.jpg",
+    title: "Grand Egyptian Museum",
+    link: "/projects/grand-egyptian-museum",
+  },
+];
