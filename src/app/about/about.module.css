@@ -1,0 +1,154 @@
+/* About Page Modern Styles */
+
+.aboutHero {
+  position: relative;
+  width: 100%;
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, rgba(0,62,126,0.7), rgba(0,62,126,0.3)), url('/landing1.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.aboutHeroContent {
+  z-index: 2;
+  padding: 4rem 2rem 3rem 2rem;
+}
+
+.aboutTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  color: #003E7E;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.08);
+}
+
+.aboutSubtitle {
+  font-size: 1.4rem;
+  color: #e0e6ef;
+  margin-bottom: 0;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.10);
+}
+
+.aboutSection {
+  max-width: 1200px;
+  margin: 0 auto 3.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.aboutSectionTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #003E7E;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.aboutSectionText {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.aboutStats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 2.5rem 0 3.5rem 0;
+}
+
+.aboutStat {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(0,62,126,0.10);
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 180px;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.aboutStat:hover {
+  box-shadow: 0 8px 32px rgba(0,62,126,0.18);
+  transform: translateY(-4px) scale(1.04);
+}
+.aboutStatNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #003E7E;
+  margin-bottom: 0.5rem;
+}
+.aboutStatLabel {
+  font-size: 1rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0 3.5rem 0;
+}
+
+.aboutCard {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,62,126,0.08);
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.aboutCard:hover {
+  box-shadow: 0 8px 32px rgba(242,103,34,0.13);
+  transform: translateY(-4px) scale(1.02);
+}
+.aboutCardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #003E7E;
+  margin-bottom: 1rem;
+}
+.aboutCardText {
+  font-size: 1rem;
+  color: #666;
+}
+
+.aboutHeroTitle {
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .aboutHeroContent {
+    padding: 2.5rem 1rem 2rem 1rem;
+  }
+  .aboutTitle {
+    font-size: 2.1rem;
+  }
+  .aboutSectionTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutHero {
+    min-height: 180px;
+  }
+  .aboutHeroContent {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .aboutStats {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+} 

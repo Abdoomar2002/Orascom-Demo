@@ -12,17 +12,17 @@ import useHorizontalScroll from '../hooks/useHorizontalScroll';
 const featuredProjects = [
   {
     title: "Bahr El Baqr Wastewater Treatment Plant",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&w=918&h=512&fit=crop",
+    image: "/landing1.jpg",
     href: "/projects/bahr-el-baqr"
   },
   {
     title: "High-Speed Rail",
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&w=918&h=512&fit=crop",
+    image: "/landing2.jpg",
     href: "/projects/high-speed-rail"
   },
   {
     title: "Grand Egyptian Museum",
-    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=918&h=512&fit=crop",
+    image: "/landing3.jpg",
     href: "/projects/grand-egyptian-museum"
   }
 ];
@@ -84,11 +84,11 @@ export default function Home() {
               </div>
               <div className="home-who-images col-12 ml-0 mr-0 col-lg-8 mb-5 mb-lg-0 d-flex justify-content-between justify-content-lg-end">
                 <div className="mr-3 mr-md-5">
-                  <img alt="WHO WE ARE" id="home-who-img-one" src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&w=310&h=540&fit=crop"/>
+                  <img alt="WHO WE ARE" id="home-who-img-one" src="/about1.jpg"/>
                 </div>
                 <div className="mt-lg-5 pt-lg-5 align-self-end">
                   <div className="mt-5 pt-5">
-                    <img alt="WHO WE ARE" id="home-who-img-two" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&w=310&h=540&fit=crop"/>
+                    <img alt="WHO WE ARE" id="home-who-img-two" src="/about2.jpg"/>
                   </div>
                 </div>
               </div>
