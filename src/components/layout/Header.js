@@ -9,8 +9,8 @@ import styles from './Header.module.css'
 const NAV = [
   { name: 'ABOUT US', href: '/about' },
   { name: 'SERVICES', href: '/services' },
-  { name: 'ACTIVITIES', href: '/activities' },
-  { name: 'PROJECTS', href: '/projects' },
+  { name: 'ACTIVITIES', href: '/#activities' },
+  { name: 'PROJECTS', href: '/#featured-projects' },
   { name: 'CONTACT', href: '/contact' },
 ]
 
@@ -33,13 +33,15 @@ export default function Header() {
       <div className={styles.inner}>
         <div className={styles.logoNav}>
           <div className={styles.logo}>
-            <Image
-              src="/p-logo.png"
-              alt="Logo"
-              width={60}
-              height={60}
-              className={styles.logoImage}
-            />
+            <Link href="/">
+              <Image
+                src="/p-logo.png"
+                alt="Logo"
+                width={60}
+                height={60}
+                className={styles.logoImage}
+              />
+            </Link>
           </div>
           <nav className={styles.nav}>
             {NAV.map((item) => (

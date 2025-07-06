@@ -1,0 +1,155 @@
+/* Services Page Modern Styles */
+
+.servicesHero {
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/landing1.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  overflow: hidden;
+  padding-top: 100px;
+}
+.servicesHero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1;
+}
+.servicesHeroContent {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 2rem 2rem 2rem;
+}
+
+.servicesTitle {
+  font-size: 2.7rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+  color: #fff;
+}
+
+.servicesSubtitle {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.servicesSection {
+  max-width: 1200px;
+  margin: 0 auto 3.5rem auto;
+  padding: 0 1.5rem;
+}
+
+.servicesSectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #003E7E;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.servicesSectionText {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0 3.5rem 0;
+}
+
+.serviceCard {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,62,126,0.08);
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.serviceCard:hover {
+  box-shadow: 0 8px 32px rgba(242,103,34,0.13);
+  transform: translateY(-4px) scale(1.02);
+}
+.serviceIcon {
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.2rem auto;
+  font-size: 2rem;
+  color: #003E7E;
+  border: 2px solid #003E7E;
+}
+.serviceCardTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #003E7E;
+  margin-bottom: 1rem;
+}
+.serviceCardText {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.2rem;
+}
+.serviceFeatures {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.serviceFeature {
+  color: #666;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  padding-left: 1.5rem;
+}
+.serviceFeature:last-child {
+  border-bottom: none;
+}
+.serviceFeature::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .servicesHeroContent {
+    padding: 2.5rem 1rem 2rem 1rem;
+  }
+  .servicesTitle {
+    font-size: 2.1rem;
+  }
+  .servicesSectionTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .servicesHero {
+    min-height: 120px;
+  }
+  .servicesHeroContent {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+  }
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+} 
