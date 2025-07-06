@@ -1,6 +1,5 @@
 "use client";
 
-
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,8 +10,7 @@ import AnimatedSection from '../components/AnimatedSection';
 import HexagonCursor from '../components/HexagonCursor';
 import useHorizontalScroll from '../hooks/useHorizontalScroll';
 import Activities from '../components/sections/Activities';
-
-
+import Header from '../components/layout/Header';
 
 const featuredProjects = [
   {
@@ -20,36 +18,54 @@ const featuredProjects = [
     title: "Bahr El Baqr Wastewater Treatment Plant",
     image: "/landing1.jpg",
     href: "/projects/bahr-el-baqr",
+    category: "Infrastructure",
+    location: "Sinai, Egypt",
+    status: "Completed"
   },
   {
     id: 2,
-    title: "High-Speed Rail",
+    title: "High-Speed Rail Network",
     image: "/landing2.jpg",
     href: "/projects/high-speed-rail",
+    category: "Transportation",
+    location: "Egypt",
+    status: "In Progress"
   },
   {
     id: 3,
     title: "Grand Egyptian Museum",
     image: "/landing3.jpg",
     href: "/projects/grand-egyptian-museum",
+    category: "Cultural",
+    location: "Giza, Egypt",
+    status: "Completed"
   },
   {
     id: 4,
     title: "Bahr El Baqr Wastewater Treatment Plant",
     image: "/landing1.jpg",
     href: "/projects/bahr-el-baqr",
+    category: "Infrastructure",
+    location: "Sinai, Egypt",
+    status: "Completed"
   },
   {
     id: 5,
-    title: "High-Speed Rail",
+    title: "High-Speed Rail Network",
     image: "/landing2.jpg",
     href: "/projects/high-speed-rail",
+    category: "Transportation",
+    location: "Egypt",
+    status: "In Progress"
   },
   {
     id: 6,
     title: "Grand Egyptian Museum",
     image: "/landing3.jpg",
     href: "/projects/grand-egyptian-museum",
+    category: "Cultural",
+    location: "Giza, Egypt",
+    status: "Completed"
   },
 ];
 
@@ -73,6 +89,9 @@ export default function Home() {
 
   return (
     <div className="home wp-singular page-template-default page page-id-8 wp-theme-orascom">
+      {/* Header */}
+      <Header />
+      
       {/* Preloader */}
       {isLoading && (
         <div
@@ -145,18 +164,26 @@ export default function Home() {
               </div>
               <div className="home-who-images col-12 ml-0 mr-0 col-lg-8 mb-5 mb-lg-0 d-flex justify-content-between justify-content-lg-end">
                 <div className="mr-3 mr-md-5">
-                  <img
+                  <Image
                     alt="WHO WE ARE"
                     id="home-who-img-one"
                     src="/about1.jpg"
+                    width={300}
+                    height={400}
+                    priority
+                    style={{ objectFit: 'cover' }}
                   />
                 </div>
                 <div className="mt-lg-5 pt-lg-5 align-self-end">
                   <div className="mt-5 pt-5">
-                    <img
+                    <Image
                       alt="WHO WE ARE"
                       id="home-who-img-two"
                       src="/about2.jpg"
+                      width={300}
+                      height={400}
+                      priority
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                 </div>
@@ -201,28 +228,30 @@ export default function Home() {
               <Link
                 className={`${styles.articleUnit} swiper-slide article-unit`}
                 href="/about"
-                data-hover="Read"
+                data-hover={t('common.read')}
                 data-mode="light"
               >
                 <figure>
                   <div
                     className={`${styles.unitsUnitImage} units-unit-image`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                     data-mode="light"
                   >
-                    <img
+                    <Image
                       alt="Orascom Construction Reports Backlog of USD 8.7 Billion"
-                      src="https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&w=310&h=400&fit=crop"
+                      src="/news1.jpg"
+                      fill
+                      priority
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                   <figcaption
                     className={`${styles.articleUnitData} article-unit-data`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                   >
-                    <p>28 May, 2025</p>
+                    <p>{t('home.newsroom.articles.article1.date')}</p>
                     <h1>
-                      Orascom Construction Reports Backlog of USD 8.7 Billion
-                      and Revenue of USD 847.6 Million in Q1 2025
+                      {t('home.newsroom.articles.article1.title')}
                     </h1>
                   </figcaption>
                 </figure>
@@ -230,29 +259,30 @@ export default function Home() {
               <Link
                 className={`${styles.articleUnit} swiper-slide article-unit`}
                 href="/about"
-                data-hover="Read"
+                data-hover={t('common.read')}
                 data-mode="light"
               >
                 <figure>
                   <div
                     className={`${styles.unitsUnitImage} units-unit-image`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                     data-mode="light"
                   >
-                    <img
+                    <Image
                       alt="Red Sea Wind Farm"
-                      src="https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop"
+                      src="/news2.jpg"
+                      fill
+                      priority
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                   <figcaption
                     className={`${styles.articleUnitData} article-unit-data`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                   >
-                    <p>15 April, 2025</p>
+                    <p>{t('home.newsroom.articles.article2.date')}</p>
                     <h1>
-                      Orascom Construction-ENGIE-TTC-Eurus Consortium Begins
-                      Commercial Operations of 500 MW at Red Sea Wind Farm in
-                      Egypt 6 Months Ahead of Schedule
+                      {t('home.newsroom.articles.article2.title')}
                     </h1>
                   </figcaption>
                 </figure>
@@ -260,28 +290,30 @@ export default function Home() {
               <Link
                 className={`${styles.articleUnit} swiper-slide article-unit`}
                 href="/about"
-                data-hover="Read"
+                data-hover={t('common.read')}
                 data-mode="light"
               >
                 <figure>
                   <div
                     className={`${styles.unitsUnitImage} units-unit-image`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                     data-mode="light"
                   >
-                    <img
+                    <Image
                       alt="FY 2024 Results"
-                      src="https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&w=310&h=400&fit=crop"
+                      src="/news3.jpg"
+                      fill
+                      priority
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                   <figcaption
                     className={`${styles.articleUnitData} article-unit-data`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                   >
-                    <p>26 March, 2025</p>
+                    <p>{t('home.newsroom.articles.article3.date')}</p>
                     <h1>
-                      Orascom Construction Reports Backlog of USD 7.6 Billion
-                      and Revenue of USD 3.3 Billion in FY 2024
+                      {t('home.newsroom.articles.article3.title')}
                     </h1>
                   </figcaption>
                 </figure>
@@ -289,28 +321,30 @@ export default function Home() {
               <Link
                 className={`${styles.articleUnit} swiper-slide article-unit`}
                 href="/about"
-                data-hover="Read"
+                data-hover={t('common.read')}
                 data-mode="light"
               >
                 <figure>
                   <div
                     className={`${styles.unitsUnitImage} units-unit-image`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                     data-mode="light"
                   >
-                    <img
+                    <Image
                       alt="Orascom Construction and Técnicas Reunidas"
-                      src="https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop"
+                      src="/news4.jpg"
+                      fill
+                      priority
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                   <figcaption
                     className={`${styles.articleUnitData} article-unit-data`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                   >
-                    <p>24 March, 2025</p>
+                    <p>{t('home.newsroom.articles.article4.date')}</p>
                     <h1>
-                      Orascom Construction and Técnicas Reunidas to Build 1.4 GW
-                      Qurayyah IPP Extension in Saudi Arabia
+                      {t('home.newsroom.articles.article4.title')}
                     </h1>
                   </figcaption>
                 </figure>
@@ -318,28 +352,30 @@ export default function Home() {
               <Link
                 className={`${styles.articleUnit} swiper-slide article-unit`}
                 href="/about"
-                data-hover="Read"
+                data-hover={t('common.read')}
                 data-mode="light"
               >
                 <figure>
                   <div
                     className={`${styles.unitsUnitImage} units-unit-image`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                     data-mode="light"
                   >
-                    <img
+                    <Image
                       alt="American University in Cairo Campus"
-                      src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=310&h=400&fit=crop"
+                      src="/news5.jpg"
+                      fill
+                      priority
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                   <figcaption
                     className={`${styles.articleUnitData} article-unit-data`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                   >
-                    <p>24 February, 2025</p>
+                    <p>{t('home.newsroom.articles.article5.date')}</p>
                     <h1>
-                      Orascom Construction to Build the New American University
-                      in Cairo Campus
+                      {t('home.newsroom.articles.article5.title')}
                     </h1>
                   </figcaption>
                 </figure>
@@ -347,28 +383,30 @@ export default function Home() {
               <Link
                 className={`${styles.articleUnit} swiper-slide article-unit`}
                 href="/about"
-                data-hover="Read"
+                data-hover={t('common.read')}
                 data-mode="light"
               >
                 <figure>
                   <div
                     className={`${styles.unitsUnitImage} units-unit-image`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                     data-mode="light"
                   >
-                    <img
+                    <Image
                       alt="New Alamein City"
-                      src="https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop"
+                      src="/news6.jpg"
+                      fill
+                      priority
+                      style={{ objectFit: 'cover' }}
                     />
                   </div>
                   <figcaption
                     className={`${styles.articleUnitData} article-unit-data`}
-                    data-hover="Read"
+                    data-hover={t('common.read')}
                   >
-                    <p>09 January, 2025</p>
+                    <p>{t('home.newsroom.articles.article6.date')}</p>
                     <h1>
-                      Orascom Construction Consortium Begins First Phase of New
-                      Alamein City Development
+                      {t('home.newsroom.articles.article6.title')}
                     </h1>
                   </figcaption>
                 </figure>
@@ -377,8 +415,8 @@ export default function Home() {
             <div className={styles.centerDiv}>
               <div className="row no-gutters align-items-md-start mt-5 mb-5 pb-5">
                 <div className="col-8 col-xlg-10 offset-0 offset-lg-2 offset-lg-1 d-flex justify-content-left justify-content-lg-center">
-                  <Link className={`${styles.cta} cta secondary`} href="/about">
-                    <span>Explore Newsroom</span>
+                  <Link className={`${styles.cta} cta secondary`} href="/news">
+                    <span>{t('home.newsroom.exploreNewsroom')}</span>
                   </Link>
                 </div>
               </div>
@@ -399,30 +437,50 @@ export default function Home() {
             </div>
             <div className={styles.homeServicesContent}>
               <div className={styles.homeServicesContentImage}>
-                <img
+                <Image
                   alt="Services Background"
                   src={"/wp-content/uploads/Services/1.jpg"}
+                  width={800}
+                  height={600}
+                  priority
                   className={currentImage === "1.jpg" ? styles.activeImage : ""}
+                  style={{ objectFit: 'cover' }}
                 />
-                <img
+                <Image
                   alt="Services Background"
                   src={"/wp-content/uploads/Services/2.jpg"}
+                  width={800}
+                  height={600}
+                  priority
                   className={currentImage == "2.jpg" ? styles.activeImage : ""}
-                />{" "}
-                <img
+                  style={{ objectFit: 'cover' }}
+                />
+                <Image
                   alt="Services Background"
                   src={"/wp-content/uploads/Services/3.jpg"}
+                  width={800}
+                  height={600}
+                  priority
                   className={currentImage == "3.jpg" ? styles.activeImage : ""}
-                />{" "}
-                <img
+                  style={{ objectFit: 'cover' }}
+                />
+                <Image
                   alt="Services Background"
                   src={"/wp-content/uploads/Services/4.jpg"}
+                  width={800}
+                  height={600}
+                  priority
                   className={currentImage == "4.jpg" ? styles.activeImage : ""}
-                />{" "}
-                <img
+                  style={{ objectFit: 'cover' }}
+                />
+                <Image
                   alt="Services Background"
                   src={"/wp-content/uploads/Services/5.jpg"}
+                  width={800}
+                  height={600}
+                  priority
                   className={currentImage == "5.jpg" ? styles.activeImage : ""}
+                  style={{ objectFit: 'cover' }}
                 />
               </div>
               <ul className={styles.homeServicesUnits}>
@@ -435,7 +493,7 @@ export default function Home() {
                     console.log("1.jpg");
                   }}
                 >
-                  <h1>Infrastructure</h1>
+                  <h1>{t('home.services.infrastructure')}</h1>
                   <Link href="/services" />
                 </li>
                 <li
@@ -444,7 +502,7 @@ export default function Home() {
                   }
                   onMouseEnter={() => setCurrentImage("2.jpg")}
                 >
-                  <h1>Power & Energy</h1>
+                  <h1>{t('home.services.powerEnergy')}</h1>
                   <Link href="/services" />
                 </li>
                 <li
@@ -453,7 +511,7 @@ export default function Home() {
                   }
                   onMouseEnter={() => setCurrentImage("3.jpg")}
                 >
-                  <h1>Industrial</h1>
+                  <h1>{t('home.services.industrial')}</h1>
                   <Link href="/services" />
                 </li>
                 <li
@@ -462,7 +520,7 @@ export default function Home() {
                   }
                   onMouseEnter={() => setCurrentImage("4.jpg")}
                 >
-                  <h1>Commercial</h1>
+                  <h1>{t('home.services.commercial')}</h1>
                   <Link href="/services" />
                 </li>
                 <li
@@ -471,7 +529,7 @@ export default function Home() {
                   }
                   onMouseEnter={() => setCurrentImage("5.jpg")}
                 >
-                  <h1>Residential</h1>
+                  <h1>{t('home.services.residential')}</h1>
                   <Link href="/services" />
                 </li>
               </ul>
@@ -486,17 +544,23 @@ export default function Home() {
         <section
           className={`${styles.featuredProjects} p-5 featured-projects dark`}
           id="featured-projects"
+          style={{ paddingBottom: '120px' }}
         >
           <div className={styles.centerDiv}>
-
             <div
               className={`${styles.sectionData} section-data`}
               id="featured-projects-data"
             >
               <h1>
-                <span>featured projects</span>
+                <span>{t('home.featuredProjects.title')}</span>
               </h1>
-              <h2>Our Work</h2>
+              <h2>{t('home.featuredProjects.subtitle')}</h2>
+            </div>
+            {/* Centered CTA Button above the slider */}
+            <div style={{ display: 'flex', justifyContent: 'center', margin: '32px 0 0 0' }}>
+              <Link className={`${styles.cta} cta secondary`} href="/portfolio">
+                <span>{t('home.featuredProjects.cta')}</span>
+              </Link>
             </div>
           </div>
           <div className={styles.projectsSlider + styles.scrollable + " gap-5"}>
@@ -507,24 +571,50 @@ export default function Home() {
                   href={project.href}
                   key={project.id}
                 >
-                  <img alt={project.title} src={project.image} />
+                  <Image 
+                    alt={project.title} 
+                    src={project.image} 
+                    width={400}
+                    height={300}
+                    priority={project.id <= 3}
+                    loading={project.id <= 3 ? "eager" : "lazy"}
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 480px) 320px, (max-width: 1024px) 400px, 480px"
+                  />
                   <div className={styles.projectUnitDataHolder}>
+                    <div className={styles.projectCategory}>
+                      {project.category || 'Infrastructure'}
+                    </div>
                     <h1>{project.title}</h1>
+                    <div className={styles.projectDetails}>
+                      <span className={styles.projectLocation}>
+                        {project.location || 'Egypt'}
+                      </span>
+                      <span className={styles.projectStatus}>
+                        {project.status || 'In Progress'}
+                      </span>
+                    </div>
+                  </div>
+                  <div className={styles.projectOverlay}>
+                    <div className={styles.projectHoverContent}>
+                      <span className={styles.viewProject}>View Project</span>
+                    </div>
                   </div>
                 </Link>
               ))}
             </div>
           </div>
-          <div className={styles.centerDiv}>
-            <div className="row no-gutters align-items-md-start mt-5 mb-5 pb-5">
-              <div className="col-8 col-xlg-10 offset-0 offset-lg-2 offset-lg-1 d-flex justify-content-left justify-content-lg-center">
-                <Link className={`${styles.cta} cta white`} href="/projects">
-                  <span>View All Projects</span>
-                </Link>
-              </div>
-            </div>
+
+          {/* Centered CTA Button inside the section */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: 40 }}>
+            <Link className={`${styles.cta} cta secondary`} href="/portfolio">
+              <span>{t('home.featuredProjects.cta')}</span>
+            </Link>
           </div>
         </section>
+        
+        {/* Spacer to ensure sufficient space before footer */}
+        <div style={{ height: '120px' }}></div>
       </main>
     </div>
   );

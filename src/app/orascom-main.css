@@ -328,7 +328,7 @@ section.home-services .home-services-content ul li h1{font-size:21px;line-height
 
 /* Featured Projects */
 section.featured-projects{max-height:800px;height:100vh}
-section.featured-projects.dark{background-color:#003e7e;color:#fff}
+section.featured-projects.dark{background-color:#fff;color:#111827}
 
 /* Gray areas */
 section .gray-area{position:absolute;width:100%;height:390px;background-color:#f2f5f8;z-index:1}

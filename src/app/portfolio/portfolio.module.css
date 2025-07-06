@@ -1,0 +1,439 @@
+.portfolioPage {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  background: none;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(30,58,138,0.5), rgba(59,130,246,0.3)), url('/landing1.jpg') center/cover no-repeat;
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 60px 0;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Cairo', sans-serif;
+}
+
+.heroContent p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Stats Section */
+.statsSection {
+  background: white;
+  padding: 60px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.statItem h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+  font-family: 'Cairo', sans-serif;
+}
+
+.statItem p {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Filters Section */
+.filtersSection {
+  background: white;
+  padding: 40px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.filtersContent {
+  display: flex;
+  gap: 20px;
+  align-items: end;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 150px;
+}
+
+.filterGroup label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.filterSelect {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  font-size: 0.9rem;
+  color: #374151;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.resultsCount {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+/* Projects Section */
+.projectsSection {
+  padding: 60px 0;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.projectCard {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.projectCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.projectImage {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.projectCategory {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(30, 58, 138, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.projectStatus {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(34, 197, 94, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.projectStatusInProgress {
+  background: rgba(245, 158, 11, 0.9);
+}
+
+.projectStatusPlanned {
+  background: rgba(107, 114, 128, 0.9);
+}
+
+.projectContent {
+  padding: 24px;
+}
+
+.projectTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  font-family: 'Cairo', sans-serif;
+}
+
+.projectDescription {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.projectMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.projectLocation,
+.projectValue,
+.projectDuration {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.metaLabel {
+  font-weight: 600;
+  color: #374151;
+}
+
+.projectLocation span:last-child,
+.projectValue span:last-child,
+.projectDuration span:last-child {
+  color: #6b7280;
+}
+
+.viewProject {
+  display: inline-flex;
+  align-items: center;
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.viewProject:hover {
+  color: #1e3a8a;
+}
+
+/* CTA Section */
+.ctaSection {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+}
+
+.ctaContent h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Cairo', sans-serif;
+}
+
+.ctaContent p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: white;
+  color: #1e3a8a;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid white;
+}
+
+.ctaButton:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* RTL Support */
+[dir="rtl"] .projectCategory {
+  left: auto;
+  right: 15px;
+}
+
+[dir="rtl"] .projectStatus {
+  right: auto;
+  left: 15px;
+}
+
+[dir="rtl"] .viewProject {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .viewProject::after {
+  content: "←";
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+[dir="rtl"] .viewProject::before {
+  content: "";
+  margin-left: 8px;
+  margin-right: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heroContent h1 {
+    font-size: 2rem;
+  }
+  
+  .heroContent p {
+    font-size: 1rem;
+  }
+  
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .statItem h2 {
+    font-size: 2rem;
+  }
+  
+  .filtersContent {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filterGroup {
+    min-width: auto;
+  }
+  
+  .projectsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .ctaContent h2 {
+    font-size: 2rem;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 60px 0;
+  }
+  
+  .statsSection {
+    padding: 40px 0;
+  }
+  
+  .projectsSection {
+    padding: 40px 0;
+  }
+  
+  .ctaSection {
+    padding: 60px 0;
+  }
+  
+  .projectContent {
+    padding: 20px;
+  }
+  
+  .projectTitle {
+    font-size: 1.1rem;
+  }
+}
+
+/* Loading Animation */
+.projectCard {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Focus Styles for Accessibility */
+.filterSelect:focus,
+.ctaButton:focus,
+.viewProject:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Scrollbar Styling */
+.projectsGrid::-webkit-scrollbar {
+  width: 8px;
+}
+
+.projectsGrid::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.projectsGrid::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.projectsGrid::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+} 

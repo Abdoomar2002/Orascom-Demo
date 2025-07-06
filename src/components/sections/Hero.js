@@ -9,7 +9,7 @@ import styles from './Hero.module.css';
 // Single Responsibility: Handle hero section display and content
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -38,43 +38,53 @@ export default function Hero() {
   };
 
   return (
-    <section className={styles.hero}>
+    <section className={styles.hero} dir={language === 'ar' ? 'rtl' : 'ltr'}>
       <div className={styles.slider}>
-        {siteConfig.hero.slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
-          >
-            <div className={styles.slideImage}>
-              <Image
-                src={slide.image}
-                alt={slide.caption}
-                fill
-                priority={index === 0}
-                style={{ objectFit: 'cover' }}
-              />
-              <div className={styles.overlay}></div>
-            </div>
-            
-            <div className={styles.slideContent}>
-              <div className={styles.container}>
-                <h1 className={styles.title}>{t('home.hero.title')}</h1>
-                <p className={styles.caption}>{t('home.hero.subtitle')}</p>
-                <div className={styles.cta}>
-                  <button className={styles.ctaButton}>{t('home.whoWeAre.cta')}</button>
+        {siteConfig.hero.slides.map((slide, index) => {
+          const slideTitle = t(`home.hero.${slide.titleKey}`);
+          const slideSubtitle = t(`home.hero.${slide.subtitleKey}`);
+          return (
+            <div
+              key={index}
+              className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
+            >
+              <div className={styles.slideImage}>
+                <Image
+                  src={slide.image}
+                  alt={slideTitle}
+                  fill
+                  priority={index === 0}
+                  style={{ 
+                    objectFit: 'cover',
+                    ...(language === 'ar' && {
+                      transform: 'scaleX(-1)', // Flip image for RTL
+                    })
+                  }}
+                  sizes="100vw"
+                />
+                <div className={styles.overlay}></div>
+              </div>
+              
+              <div className={styles.slideContent}>
+                <div className={styles.container}>
+                  <h1 className={styles.title}>{slideTitle}</h1>
+                  <p className={styles.caption}>{slideSubtitle}</p>
+                  <div className={styles.cta}>
+                    <button className={styles.ctaButton}>{t('home.whoWeAre.cta')}</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Navigation arrows */}
       <button className={`${styles.navButton} ${styles.prevButton}`} onClick={prevSlide}>
-        <span>‹</span>
+        <span>{language === 'ar' ? '›' : '‹'}</span>
       </button>
       <button className={`${styles.navButton} ${styles.nextButton}`} onClick={nextSlide}>
-        <span>›</span>
+        <span>{language === 'ar' ? '‹' : '›'}</span>
       </button>
 
       {/* Slide indicators */}

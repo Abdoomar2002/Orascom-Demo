@@ -28,15 +28,18 @@ export const siteConfig = {
     slides: [
       {
         image: "/wp-content/uploads/DJI_0104-0-e1687423876762-1366x768.jpg",
-        caption: "Decades of experience have laid out the path for a local family-owned business to become..."
+        titleKey: "slide1.title",
+        subtitleKey: "slide1.subtitle"
       },
       {
         image: "/wp-content/uploads/Plant-1-Bahr-2.png",
-        caption: "A leading global engineering and construction group..."
+        titleKey: "slide2.title",
+        subtitleKey: "slide2.subtitle"
       },
       {
         image: "/wp-content/uploads/Clarkson-Aerial-Jan2023-5-1366x768.png",
-        caption: "Transforming landscapes and empowering the communities to operate in."
+        titleKey: "slide3.title",
+        subtitleKey: "slide3.subtitle"
       }
     ]
   },
@@ -99,6 +102,35 @@ export const siteConfig = {
     },
     phone: "+20 2 2461 8000",
     email: "info@orascom.com"
+  },
+  // Enhanced image configuration for better loading
+  images: {
+    about: {
+      image1: "/about1.jpg",
+      image2: "/about2.jpg",
+      alt1: "Orascom Construction About Us",
+      alt2: "Orascom Construction Projects"
+    },
+    services: {
+      infrastructure: "/wp-content/uploads/Services/1.jpg",
+      powerEnergy: "/wp-content/uploads/Services/2.jpg",
+      industrial: "/wp-content/uploads/Services/3.jpg",
+      commercial: "/wp-content/uploads/Services/4.jpg",
+      residential: "/wp-content/uploads/Services/5.jpg"
+    },
+    projects: {
+      project1: "/landing1.jpg",
+      project2: "/landing2.jpg",
+      project3: "/landing3.jpg"
+    },
+    news: {
+      article1: "https://images.unsplash.com/photo-1541976590-713941681591?ixlib=rb-4.0.3&w=310&h=400&fit=crop",
+      article2: "https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop",
+      article3: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?ixlib=rb-4.0.3&w=310&h=400&fit=crop",
+      article4: "https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop",
+      article5: "https://images.unsplash.com/photo-1581094288338-2314dddb7ece?ixlib=rb-4.0.3&w=310&h=400&fit=crop",
+      article6: "https://images.unsplash.com/photo-1497436072909-f5e4be375bc6?ixlib=rb-4.0.3&w=310&h=400&fit=crop"
+    }
   }
 };
 
@@ -198,4 +230,4 @@ export const COMPANY_VALUES = [
     title: 'Integrity',
     description: 'We operate with transparency, ethical business practices, and unwavering commitment to our stakeholders.'
   }
-] 
+]; 

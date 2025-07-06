@@ -37,7 +37,8 @@ export const translations = {
       explore: 'Explore',
       read: 'Read',
       viewAll: 'View All',
-      learnMore: 'Learn More'
+      learnMore: 'Learn More',
+      readMore: 'Read More'
     },
 
     // Footer
@@ -71,6 +72,27 @@ export const translations = {
         contractValue: 'Contract Value',
         countries: 'Countries',
         yearsExperience: 'Years Experience'
+      },
+      filters: {
+        category: 'Category',
+        status: 'Status',
+        sortBy: 'Sort By',
+        newest: 'Newest First',
+        oldest: 'Oldest First',
+        value: 'Project Value',
+        name: 'Project Name',
+        projectsFound: 'projects found'
+      },
+      project: {
+        location: 'Location',
+        value: 'Value',
+        duration: 'Duration',
+        viewProject: 'View Project'
+      },
+      cta: {
+        title: 'Ready to Start Your Next Project?',
+        description: 'Let\'s discuss how we can help bring your vision to life with our expertise and innovative solutions.',
+        button: 'Get In Touch'
       },
       projects: {
         newCapital: {
@@ -162,6 +184,27 @@ export const translations = {
         }
       }
     },
+
+    // News Page
+    news: {
+      pageTitle: 'Newsroom',
+      pageDescription: 'Stay updated with the latest news, project updates, and company announcements from Orascom Construction.',
+      newsletterTitle: 'Stay Updated',
+      newsletterDescription: 'Subscribe to our newsletter to receive the latest news and updates directly in your inbox.',
+      emailPlaceholder: 'Enter your email address',
+      subscribe: 'Subscribe',
+      categories: {
+        all: 'All',
+        financialResults: 'Financial Results',
+        renewableEnergy: 'Renewable Energy',
+        partnerships: 'Partnerships',
+        education: 'Education',
+        urbanDevelopment: 'Urban Development',
+        transportation: 'Transportation',
+        culturalProjects: 'Cultural Projects',
+        environmental: 'Environmental'
+      }
+    },
     
     // Homepage
     home: {
@@ -182,7 +225,7 @@ export const translations = {
         exploreNewsroom: 'Explore Newsroom',
         articles: {
           article1: {
-            date: '15 April, 2025',
+            date: '28 May, 2025',
             title: 'Orascom Construction Reports Backlog of USD 8.7 Billion and Revenue of USD 847.6 Million in Q1 2025'
           },
           article2: {
@@ -391,7 +434,8 @@ export const translations = {
       explore: 'استكشف',
       read: 'اقرأ',
       viewAll: 'عرض الكل',
-      learnMore: 'اعرف المزيد'
+      learnMore: 'اعرف المزيد',
+      readMore: 'اقرأ المزيد'
     },
 
     // Footer
@@ -425,6 +469,27 @@ export const translations = {
         contractValue: 'قيمة العقود',
         countries: 'دولة',
         yearsExperience: 'سنوات الخبرة'
+      },
+      filters: {
+        category: 'الفئة',
+        status: 'الحالة',
+        sortBy: 'ترتيب حسب',
+        newest: 'الأحدث أولاً',
+        oldest: 'الأقدم أولاً',
+        value: 'قيمة المشروع',
+        name: 'اسم المشروع',
+        projectsFound: 'مشروع تم العثور عليه'
+      },
+      project: {
+        location: 'الموقع',
+        value: 'القيمة',
+        duration: 'المدة',
+        viewProject: 'عرض المشروع'
+      },
+      cta: {
+        title: 'مستعد لبدء مشروعك القادم؟',
+        description: 'دعنا نناقش كيف يمكننا مساعدتك في تحقيق رؤيتك بخبرتنا وحلولنا المبتكرة.',
+        button: 'تواصل معنا'
       },
       projects: {
         newCapital: {
@@ -516,18 +581,51 @@ export const translations = {
         }
       }
     },
+
+    // News Page
+    news: {
+      pageTitle: 'غرفة الأخبار',
+      pageDescription: 'ابق على اطلاع بآخر الأخبار وتحديثات المشاريع وإعلانات الشركة من أوراسكوم للإنشاءات.',
+      newsletterTitle: 'ابق على اطلاع',
+      newsletterDescription: 'اشترك في نشرتنا الإخبارية لتلقي آخر الأخبار والتحديثات مباشرة في بريدك الإلكتروني.',
+      emailPlaceholder: 'أدخل عنوان بريدك الإلكتروني',
+      subscribe: 'اشتراك',
+      categories: {
+        all: 'الكل',
+        financialResults: 'النتائج المالية',
+        renewableEnergy: 'الطاقة المتجددة',
+        partnerships: 'الشراكات',
+        education: 'التعليم',
+        urbanDevelopment: 'التطوير الحضري',
+        transportation: 'النقل',
+        culturalProjects: 'المشاريع الثقافية',
+        environmental: 'البيئية'
+      }
+    },
     
     // Homepage
     home: {
       hero: {
         title: 'نساعدك في بناء أحلامك',
-        subtitle: 'فريقنا المحترف دائماً في خدمتك. نتبع نهجاً فردياً مع كل عميل، سواء كان مشروعاً كبيراً أو صغيراً. تعرف على المزيد من خدماتنا!'
+        subtitle: 'فريقنا المحترف دائماً في خدمتك. نعتمد أسلوبًا فرديًا مع كل عميل، سواء كان مشروعاً كبيراً أو صغيراً. تعرّف أكثر على خدماتنا!',
+        slide1: {
+          title: 'نساعدك في بناء أحلامك',
+          subtitle: 'فريقنا المحترف دائمًا في خدمتك. نعتمد أسلوبًا فرديًا مع كل عميل، سواء كان مشروعك كبيرًا أو صغيرًا. تعرّف أكثر على خدماتنا!'
+        },
+        slide2: {
+          title: 'حلول مبتكرة لكل مشروع',
+          subtitle: 'من الفكرة إلى التنفيذ، نقدم التميز والجودة في كل تفصيلة. اكتشف كيف يمكننا تحويل رؤيتك إلى واقع.'
+        },
+        slide3: {
+          title: 'شريكك الموثوق في البناء',
+          subtitle: 'بخبرة سنوات والتزام بأعلى معايير السلامة والاستدامة، نحن شريكك الموثوق لتحقيق النجاح.'
+        }
       },
       whoWeAre: {
         title: 'من نحن',
         subtitle: 'نظرة عامة',
         description1: 'أوراسكوم للإنشاءات هي شركة إنشاءات وهندسة عالمية رائدة تركز بشكل أساسي على مشاريع البنية التحتية والصناعية والتجارية عالية الجودة في الشرق الأوسط وأفريقيا والولايات المتحدة.',
-        description2: 'تطور أوراسكوم للإنشاءات وتستثمر في الامتيازات، وتمتلك 50% من مجموعة بيسيكس، وتحتفظ بمحفظة من مواد البناء وإدارة المرافق وخدمات المعدات. احتلت المجموعة باستمرار مكانة بين أكبر المقاولين في العالم وهي مدرجة في الإمارات ومصر.',
+        description2: 'تطور أوراسكوم للإنشاءات وتستثمر في الامتيازات، وتمتلك 50% من مجموعة بيسيكس، وتحتفظ بمحفظة من مواد البناء وإدارة المرافق وخدمات المعدات. احتلت المجموعة باستمرار مكانة بين أكبر المقاولين في العالم وهي مدرجة في بورصة ناسداك دبي والبورصة المصرية.',
         cta: 'استكشف'
       },
       newsroom: {
@@ -536,7 +634,7 @@ export const translations = {
         exploreNewsroom: 'استكشف غرفة الأخبار',
         articles: {
           article1: {
-            date: '15 أبريل، 2025',
+            date: '28 مايو، 2025',
             title: 'أوراسكوم للإنشاءات تعلن عن طلبات متراكمة بقيمة 8.7 مليار دولار وإيرادات 847.6 مليون دولار في الربع الأول من 2025'
           },
           article2: {
