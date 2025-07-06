@@ -3,11 +3,13 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { siteConfig } from '@/lib/constants/site-config';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import styles from './Hero.module.css';
 
 // Single Responsibility: Handle hero section display and content
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -56,10 +58,10 @@ export default function Hero() {
             
             <div className={styles.slideContent}>
               <div className={styles.container}>
-                <h1 className={styles.title}>{siteConfig.hero.title}</h1>
-                <p className={styles.caption}>{slide.caption}</p>
+                <h1 className={styles.title}>{t('home.hero.title')}</h1>
+                <p className={styles.caption}>{t('home.hero.subtitle')}</p>
                 <div className={styles.cta}>
-                  <button className={styles.ctaButton}>Discover More</button>
+                  <button className={styles.ctaButton}>{t('home.whoWeAre.cta')}</button>
                 </div>
               </div>
             </div>

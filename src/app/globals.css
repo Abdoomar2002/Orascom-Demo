@@ -19,6 +19,36 @@ body:not(.home) {
 /* CSS Custom Properties for viewport height fix */
 :root {
   --vh: 1vh;
+  --font-arabic: 'Cairo', sans-serif;
+  --font-english: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3, [dir="rtl"] h4, [dir="rtl"] h5, [dir="rtl"] h6 {
+  font-family: var(--font-arabic);
+}
+
+[dir="rtl"] p, [dir="rtl"] span, [dir="rtl"] div {
+  font-family: var(--font-arabic);
+}
+
+/* LTR Support */
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+[dir="ltr"] body {
+  font-family: var(--font-english);
 }
 
 /* Override defaults */
@@ -35,6 +65,7 @@ body:not(.home) {
 main {
   min-height: 100vh;
 }
+
 .featured-projects-section {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("/your-background.jpg") center/cover no-repeat;
@@ -45,4 +76,16 @@ main {
   background: rgba(0, 0, 0, 0.5);
   padding: 0.5rem 1rem;
   margin: 0;
+}
+
+/* RTL specific adjustments */
+[dir="rtl"] .slide-item h4 {
+  text-align: right;
+}
+
+/* Responsive text sizing for Arabic */
+@media (max-width: 768px) {
+  [dir="rtl"] body {
+    font-size: 16px; /* Slightly larger for better Arabic readability */
+  }
 }

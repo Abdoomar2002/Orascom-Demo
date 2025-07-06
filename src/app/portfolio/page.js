@@ -1,7 +1,10 @@
 "use client"
 // Portfolio Page - Orascom Construction
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function Portfolio() {
+  const { t } = useLanguage();
+
   return (
     <div className="portfolio-page">
       <style jsx>{`
@@ -215,26 +218,26 @@ export default function Portfolio() {
       `}</style>
 
       <div className="hero-section">
-        <h1>Our Portfolio</h1>
-        <p>Transforming landscapes across the Middle East, Africa, and the United States</p>
+        <h1>{t('portfolio.hero.title')}</h1>
+        <p>{t('portfolio.hero.subtitle')}</p>
       </div>
 
       <div className="portfolio-stats">
         <div className="stat-item">
           <div className="stat-number">500+</div>
-          <div className="stat-label">Projects Completed</div>
+          <div className="stat-label">{t('portfolio.stats.projectsCompleted')}</div>
         </div>
         <div className="stat-item">
           <div className="stat-number">$50B+</div>
-          <div className="stat-label">Contract Value</div>
+          <div className="stat-label">{t('portfolio.stats.contractValue')}</div>
         </div>
         <div className="stat-item">
           <div className="stat-number">15</div>
-          <div className="stat-label">Countries</div>
+          <div className="stat-label">{t('portfolio.stats.countries')}</div>
         </div>
         <div className="stat-item">
           <div className="stat-number">50+</div>
-          <div className="stat-label">Years Experience</div>
+          <div className="stat-label">{t('portfolio.stats.yearsExperience')}</div>
         </div>
       </div>
 
@@ -242,237 +245,237 @@ export default function Portfolio() {
         <div className="project-card">
           <div className="project-image">
             <div className="project-overlay">
-              <span>New Administrative Capital</span>
+              <span>{t('portfolio.projects.newCapital.title')}</span>
             </div>
           </div>
           <div className="project-content">
-            <h3 className="project-title">New Administrative Capital</h3>
-            <div className="project-location">Cairo, Egypt</div>
+            <h3 className="project-title">{t('portfolio.projects.newCapital.title')}</h3>
+            <div className="project-location">{t('portfolio.projects.newCapital.location')}</div>
             <p className="project-description">
-              Mega infrastructure project including government buildings, residential districts, and commercial developments in Egypt's new capital city.
+              {t('portfolio.projects.newCapital.description')}
             </p>
             <div className="project-details">
               <div className="project-detail">
-                <strong>Sector:</strong> Infrastructure
+                <strong>Sector:</strong> {t('portfolio.projects.newCapital.sector')}
               </div>
               <div className="project-detail">
-                <strong>Value:</strong> $3.2B
+                <strong>Value:</strong> {t('portfolio.projects.newCapital.value')}
               </div>
               <div className="project-detail">
-                <strong>Status:</strong> In Progress
+                <strong>Status:</strong> {t('portfolio.projects.newCapital.status')}
               </div>
               <div className="project-detail">
-                <strong>Duration:</strong> 2018-2025
+                <strong>Duration:</strong> {t('portfolio.projects.newCapital.duration')}
               </div>
             </div>
             <div className="project-tags">
-              <span className="project-tag">Infrastructure</span>
-              <span className="project-tag">Government</span>
-              <span className="project-tag">Mixed-Use</span>
-                </div>
-              </div>
+              {t('portfolio.projects.newCapital.tags').map((tag, index) => (
+                <span key={index} className="project-tag">{tag}</span>
+              ))}
             </div>
+          </div>
+        </div>
 
         <div className="project-card">
           <div className="project-image">
             <div className="project-overlay">
-              <span>Grand Egyptian Museum</span>
+              <span>{t('portfolio.projects.grandMuseum.title')}</span>
             </div>
           </div>
           <div className="project-content">
-            <h3 className="project-title">Grand Egyptian Museum</h3>
-            <div className="project-location">Giza, Egypt</div>
+            <h3 className="project-title">{t('portfolio.projects.grandMuseum.title')}</h3>
+            <div className="project-location">{t('portfolio.projects.grandMuseum.location')}</div>
             <p className="project-description">
-              World's largest archaeological museum dedicated to ancient Egyptian civilization, located near the Great Pyramids of Giza.
+              {t('portfolio.projects.grandMuseum.description')}
             </p>
             <div className="project-details">
               <div className="project-detail">
-                <strong>Sector:</strong> Cultural
+                <strong>Sector:</strong> {t('portfolio.projects.grandMuseum.sector')}
               </div>
               <div className="project-detail">
-                <strong>Value:</strong> $550M
+                <strong>Value:</strong> {t('portfolio.projects.grandMuseum.value')}
               </div>
               <div className="project-detail">
-                <strong>Status:</strong> Completed
+                <strong>Status:</strong> {t('portfolio.projects.grandMuseum.status')}
               </div>
               <div className="project-detail">
-                <strong>Area:</strong> 120,000 m²
+                <strong>Area:</strong> {t('portfolio.projects.grandMuseum.area')}
               </div>
             </div>
             <div className="project-tags">
-              <span className="project-tag">Cultural</span>
-              <span className="project-tag">Heritage</span>
-              <span className="project-tag">Tourism</span>
-                </div>
-              </div>
+              {t('portfolio.projects.grandMuseum.tags').map((tag, index) => (
+                <span key={index} className="project-tag">{tag}</span>
+              ))}
             </div>
+          </div>
+        </div>
 
         <div className="project-card">
           <div className="project-image">
             <div className="project-overlay">
-              <span>Benban Solar Park</span>
+              <span>{t('portfolio.projects.benbanSolar.title')}</span>
             </div>
           </div>
           <div className="project-content">
-            <h3 className="project-title">Benban Solar Park</h3>
-            <div className="project-location">Aswan, Egypt</div>
+            <h3 className="project-title">{t('portfolio.projects.benbanSolar.title')}</h3>
+            <div className="project-location">{t('portfolio.projects.benbanSolar.location')}</div>
             <p className="project-description">
-              One of the world's largest solar installations, contributing significantly to Egypt's renewable energy capacity and sustainability goals.
+              {t('portfolio.projects.benbanSolar.description')}
             </p>
             <div className="project-details">
               <div className="project-detail">
-                <strong>Sector:</strong> Energy
+                <strong>Sector:</strong> {t('portfolio.projects.benbanSolar.sector')}
               </div>
               <div className="project-detail">
-                <strong>Capacity:</strong> 1.65 GW
+                <strong>Capacity:</strong> {t('portfolio.projects.benbanSolar.capacity')}
               </div>
               <div className="project-detail">
-                <strong>Status:</strong> Operational
+                <strong>Status:</strong> {t('portfolio.projects.benbanSolar.status')}
               </div>
               <div className="project-detail">
-                <strong>Area:</strong> 37 km²
+                <strong>Area:</strong> {t('portfolio.projects.benbanSolar.area')}
               </div>
             </div>
             <div className="project-tags">
-              <span className="project-tag">Solar</span>
-              <span className="project-tag">Renewable</span>
-              <span className="project-tag">Sustainability</span>
-                </div>
-              </div>
+              {t('portfolio.projects.benbanSolar.tags').map((tag, index) => (
+                <span key={index} className="project-tag">{tag}</span>
+              ))}
             </div>
+          </div>
+        </div>
 
         <div className="project-card">
           <div className="project-image">
             <div className="project-overlay">
-              <span>Suez Canal Expansion</span>
+              <span>{t('portfolio.projects.suezCanal.title')}</span>
             </div>
           </div>
           <div className="project-content">
-            <h3 className="project-title">Suez Canal Expansion</h3>
-            <div className="project-location">Suez, Egypt</div>
+            <h3 className="project-title">{t('portfolio.projects.suezCanal.title')}</h3>
+            <div className="project-location">{t('portfolio.projects.suezCanal.location')}</div>
             <p className="project-description">
-              Major expansion project of the Suez Canal, including new waterway construction and deepening of existing channels.
+              {t('portfolio.projects.suezCanal.description')}
             </p>
             <div className="project-details">
               <div className="project-detail">
-                <strong>Sector:</strong> Infrastructure
+                <strong>Sector:</strong> {t('portfolio.projects.suezCanal.sector')}
               </div>
               <div className="project-detail">
-                <strong>Length:</strong> 72 km
+                <strong>Length:</strong> {t('portfolio.projects.suezCanal.length')}
               </div>
               <div className="project-detail">
-                <strong>Status:</strong> Completed
+                <strong>Status:</strong> {t('portfolio.projects.suezCanal.status')}
               </div>
               <div className="project-detail">
-                <strong>Duration:</strong> 2014-2015
+                <strong>Duration:</strong> {t('portfolio.projects.suezCanal.duration')}
               </div>
             </div>
             <div className="project-tags">
-              <span className="project-tag">Marine</span>
-              <span className="project-tag">Logistics</span>
-              <span className="project-tag">Infrastructure</span>
-                </div>
-              </div>
+              {t('portfolio.projects.suezCanal.tags').map((tag, index) => (
+                <span key={index} className="project-tag">{tag}</span>
+              ))}
             </div>
+          </div>
+        </div>
 
         <div className="project-card">
           <div className="project-image">
             <div className="project-overlay">
-              <span>Algiers Metro</span>
+              <span>{t('portfolio.projects.algiersMetro.title')}</span>
             </div>
           </div>
           <div className="project-content">
-            <h3 className="project-title">Algiers Metro System</h3>
-            <div className="project-location">Algiers, Algeria</div>
+            <h3 className="project-title">{t('portfolio.projects.algiersMetro.title')}</h3>
+            <div className="project-location">{t('portfolio.projects.algiersMetro.location')}</div>
             <p className="project-description">
-              Comprehensive metro system including tunneling, stations, and supporting infrastructure for Algeria's capital city.
+              {t('portfolio.projects.algiersMetro.description')}
             </p>
             <div className="project-details">
               <div className="project-detail">
-                <strong>Sector:</strong> Transportation
+                <strong>Sector:</strong> {t('portfolio.projects.algiersMetro.sector')}
               </div>
               <div className="project-detail">
-                <strong>Length:</strong> 13.5 km
+                <strong>Length:</strong> {t('portfolio.projects.algiersMetro.length')}
               </div>
               <div className="project-detail">
-                <strong>Status:</strong> Operational
+                <strong>Status:</strong> {t('portfolio.projects.algiersMetro.status')}
               </div>
               <div className="project-detail">
-                <strong>Stations:</strong> 14
+                <strong>Stations:</strong> {t('portfolio.projects.algiersMetro.stations')}
               </div>
             </div>
             <div className="project-tags">
-              <span className="project-tag">Metro</span>
-              <span className="project-tag">Transportation</span>
-              <span className="project-tag">Urban</span>
-                </div>
-              </div>
+              {t('portfolio.projects.algiersMetro.tags').map((tag, index) => (
+                <span key={index} className="project-tag">{tag}</span>
+              ))}
             </div>
+          </div>
+        </div>
 
         <div className="project-card">
           <div className="project-image">
             <div className="project-overlay">
-              <span>Mosaic Hotel</span>
+              <span>{t('portfolio.projects.mosaicHotel.title')}</span>
             </div>
           </div>
           <div className="project-content">
-            <h3 className="project-title">The Mosaic Hotel</h3>
-            <div className="project-location">Laguna Beach, USA</div>
+            <h3 className="project-title">{t('portfolio.projects.mosaicHotel.title')}</h3>
+            <div className="project-location">{t('portfolio.projects.mosaicHotel.location')}</div>
             <p className="project-description">
-              Luxury boutique hotel featuring sustainable design elements and premium amenities in one of California's most prestigious coastal destinations.
+              {t('portfolio.projects.mosaicHotel.description')}
             </p>
             <div className="project-details">
               <div className="project-detail">
-                <strong>Sector:</strong> Hospitality
+                <strong>Sector:</strong> {t('portfolio.projects.mosaicHotel.sector')}
               </div>
               <div className="project-detail">
-                <strong>Rooms:</strong> 85
+                <strong>Rooms:</strong> {t('portfolio.projects.mosaicHotel.rooms')}
               </div>
               <div className="project-detail">
-                <strong>Status:</strong> Operational
-                </div>
+                <strong>Status:</strong> {t('portfolio.projects.mosaicHotel.status')}
+              </div>
               <div className="project-detail">
-                <strong>Rating:</strong> 5 Star
+                <strong>Rating:</strong> {t('portfolio.projects.mosaicHotel.rating')}
               </div>
             </div>
             <div className="project-tags">
-              <span className="project-tag">Hospitality</span>
-              <span className="project-tag">Luxury</span>
-              <span className="project-tag">Sustainable</span>
+              {t('portfolio.projects.mosaicHotel.tags').map((tag, index) => (
+                <span key={index} className="project-tag">{tag}</span>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
       <div className="sectors-section">
-        <h2>Sectors We Serve</h2>
+        <h2>{t('portfolio.sectors.title')}</h2>
         <div className="sectors-grid">
           <div className="sector-item">
-            <h4>Infrastructure</h4>
-            <p>Roads, bridges, airports, and urban development projects</p>
+            <h4>{t('portfolio.sectors.infrastructure.title')}</h4>
+            <p>{t('portfolio.sectors.infrastructure.description')}</p>
           </div>
           <div className="sector-item">
-            <h4>Power & Energy</h4>
-            <p>Power plants, renewable energy, and transmission networks</p>
+            <h4>{t('portfolio.sectors.powerEnergy.title')}</h4>
+            <p>{t('portfolio.sectors.powerEnergy.description')}</p>
           </div>
           <div className="sector-item">
-            <h4>Industrial</h4>
-            <p>Manufacturing facilities, petrochemical plants, and mining</p>
+            <h4>{t('portfolio.sectors.industrial.title')}</h4>
+            <p>{t('portfolio.sectors.industrial.description')}</p>
           </div>
           <div className="sector-item">
-            <h4>Commercial</h4>
-            <p>Office buildings, retail centers, and mixed-use developments</p>
+            <h4>{t('portfolio.sectors.commercial.title')}</h4>
+            <p>{t('portfolio.sectors.commercial.description')}</p>
           </div>
           <div className="sector-item">
-            <h4>Hospitality</h4>
-            <p>Hotels, resorts, and entertainment complexes</p>
-            </div>
+            <h4>{t('portfolio.sectors.hospitality.title')}</h4>
+            <p>{t('portfolio.sectors.hospitality.description')}</p>
+          </div>
           <div className="sector-item">
-            <h4>Healthcare</h4>
-            <p>Hospitals, medical centers, and research facilities</p>
+            <h4>{t('portfolio.sectors.healthcare.title')}</h4>
+            <p>{t('portfolio.sectors.healthcare.description')}</p>
           </div>
         </div>
-        </div>
+      </div>
     </div>
   )
 } 

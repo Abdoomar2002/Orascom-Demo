@@ -3,6 +3,7 @@ import "./globals.css";
 import Layout from "@/components/layout/Layout";
 import Head from "next/head";
 import Script from "next/script";
+import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,8 +23,18 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" 
+          rel="stylesheet" 
+        />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Layout>{children}</Layout>
+        <LanguageProvider>
+          <Layout>{children}</Layout>
+        </LanguageProvider>
         
         {/* Load external dependencies first */}
         <Script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" />

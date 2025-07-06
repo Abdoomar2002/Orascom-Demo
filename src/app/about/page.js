@@ -2,6 +2,7 @@
 // About Page - Orascom Construction
 
 import { useEffect, useRef } from 'react';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import styles from './about.module.css';
 
 function StatItem({ value, label, prefix = '', suffix = '' }) {
@@ -40,70 +41,64 @@ function StatItem({ value, label, prefix = '', suffix = '' }) {
 }
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <>
       <section className={styles.aboutHero}>
         <div className={styles.aboutHeroContent}>
-          <h1 className={`${styles.aboutTitle} ${styles.aboutHeroTitle}`}>About Us</h1>
-          <p className={styles.aboutSubtitle}>Leading global engineering and construction contractor with over five decades of excellence</p>
+          <h1 className={`${styles.aboutTitle} ${styles.aboutHeroTitle}`}>{t('about.hero.title')}</h1>
+          <p className={styles.aboutSubtitle}>{t('about.hero.subtitle')}</p>
         </div>
       </section>
 
       <section className={styles.aboutSection}>
-        <h2 className={styles.aboutSectionTitle}>Our Vision & Mission</h2>
+        <h2 className={styles.aboutSectionTitle}>{t('about.vision.title')}</h2>
         <p className={styles.aboutSectionText}>
-          Construction PLC is a leading global engineering and construction contractor primarily focused on 
-          infrastructure, industrial and high-end commercial projects in the Middle East, Africa, and the United States. 
-          With a heritage spanning over 50 years, we have built a reputation for delivering complex projects with 
-          excellence and innovation.
+          {t('about.vision.description1')}
         </p>
         <p className={styles.aboutSectionText}>
-          The Group has consistently ranked among the world's top contractors and is dual listed on the NASDAQ Dubai 
-          and the Egyptian Exchange. Our commitment to quality, safety, and sustainable development has made us a 
-          trusted partner for governments, corporations, and communities worldwide.
+          {t('about.vision.description2')}
         </p>
       </section>
 
       <section className={styles.aboutSection}>
         <div className={styles.aboutStats}>
-          <StatItem value={8700000000} label="Current Backlog" prefix="$" suffix="B" />
-          <StatItem value={50} label="Years of Experience" suffix="+" />
-          <StatItem value={15} label="Countries of Operation" suffix="+" />
-          <StatItem value={40000} label="Employees Worldwide" suffix="+" />
+          <StatItem value={8700000000} label={t('about.stats.backlog')} prefix="$" suffix="B" />
+          <StatItem value={50} label={t('about.stats.experience')} suffix="+" />
+          <StatItem value={15} label={t('about.stats.countries')} suffix="+" />
+          <StatItem value={40000} label={t('about.stats.employees')} suffix="+" />
         </div>
       </section>
 
       <section className={styles.aboutSection}>
-        <h2 className={styles.aboutSectionTitle}>Our Business</h2>
+        <h2 className={styles.aboutSectionTitle}>{t('about.business.title')}</h2>
         <p className={styles.aboutSectionText}>
-          Orascom Construction also develops and invests in concessions, owns 50% of BESIX Group, and holds a 
-          building materials, facility management and equipment services portfolio. Our diversified business model 
-          enables us to offer comprehensive solutions across the entire project lifecycle.
+          {t('about.business.description1')}
         </p>
         <p className={styles.aboutSectionText}>
-          We are committed to delivering projects that transform landscapes and empower the communities in which we operate. 
-          Our expertise spans across various sectors including infrastructure, power, industrial, commercial, and residential projects.
+          {t('about.business.description2')}
         </p>
       </section>
 
       <section className={styles.aboutSection}>
-        <h2 className={styles.aboutSectionTitle}>Our Values</h2>
+        <h2 className={styles.aboutSectionTitle}>{t('about.values.title')}</h2>
         <div className={styles.aboutGrid}>
           <div className={styles.aboutCard}>
-            <h3 className={styles.aboutCardTitle}>Excellence</h3>
-            <p className={styles.aboutCardText}>We maintain the highest standards in project delivery, safety, and quality management across all our operations.</p>
+            <h3 className={styles.aboutCardTitle}>{t('about.values.excellence.title')}</h3>
+            <p className={styles.aboutCardText}>{t('about.values.excellence.description')}</p>
           </div>
           <div className={styles.aboutCard}>
-            <h3 className={styles.aboutCardTitle}>Innovation</h3>
-            <p className={styles.aboutCardText}>We embrace cutting-edge technology and innovative construction methods to deliver superior results.</p>
+            <h3 className={styles.aboutCardTitle}>{t('about.values.innovation.title')}</h3>
+            <p className={styles.aboutCardText}>{t('about.values.innovation.description')}</p>
           </div>
           <div className={styles.aboutCard}>
-            <h3 className={styles.aboutCardTitle}>Sustainability</h3>
-            <p className={styles.aboutCardText}>We are committed to sustainable development and environmental responsibility in all our projects.</p>
+            <h3 className={styles.aboutCardTitle}>{t('about.values.sustainability.title')}</h3>
+            <p className={styles.aboutCardText}>{t('about.values.sustainability.description')}</p>
           </div>
           <div className={styles.aboutCard}>
-            <h3 className={styles.aboutCardTitle}>Integrity</h3>
-            <p className={styles.aboutCardText}>We operate with transparency, ethical business practices, and unwavering commitment to our stakeholders.</p>
+            <h3 className={styles.aboutCardTitle}>{t('about.values.integrity.title')}</h3>
+            <p className={styles.aboutCardText}>{t('about.values.integrity.description')}</p>
           </div>
         </div>
       </section>

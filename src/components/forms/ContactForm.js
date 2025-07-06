@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Button from '@/components/ui/Button'
 import Card from '@/components/ui/Card'
 import { useContactForm } from '@/hooks/useContactForm'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import styles from './ContactForm.module.css'
 
 // Single Responsibility: Handle contact form display and user interaction
@@ -15,14 +16,16 @@ export default function ContactForm({ className = '' }) {
     handleChange,
     handleSubmit
   } = useContactForm()
+  
+  const { t } = useLanguage();
 
   return (
     <Card variant="elevated" padding="large" className={`${styles.contactForm} ${className}`}>
-      <h2>Send us a Message</h2>
+      <h2>{t('common.sendUsMessage')}</h2>
       
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>
-          <label htmlFor="name">Name *</label>
+          <label htmlFor="name">{t('common.name')} *</label>
           <input
             type="text"
             id="name"
@@ -36,7 +39,7 @@ export default function ContactForm({ className = '' }) {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="email">Email *</label>
+          <label htmlFor="email">{t('common.email')} *</label>
           <input
             type="email"
             id="email"
@@ -50,7 +53,7 @@ export default function ContactForm({ className = '' }) {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="phone">Phone</label>
+          <label htmlFor="phone">{t('common.phone')}</label>
           <input
             type="tel"
             id="phone"
@@ -62,7 +65,7 @@ export default function ContactForm({ className = '' }) {
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="subject">Subject</label>
+          <label htmlFor="subject">{t('common.subject')}</label>
           <select
             id="subject"
             name="subject"
@@ -70,19 +73,19 @@ export default function ContactForm({ className = '' }) {
             onChange={handleChange}
             className={styles.select}
           >
-            <option value="">Select a subject</option>
-            <option value="project-inquiry">Project Inquiry</option>
-            <option value="partnership">Partnership Opportunity</option>
-            <option value="general-information">General Information</option>
-            <option value="careers">Career Opportunities</option>
-            <option value="investor-relations">Investor Relations</option>
-            <option value="media-inquiry">Media Inquiry</option>
-            <option value="other">Other</option>
+            <option value="">{t('common.selectSubject')}</option>
+            <option value="project-inquiry">{t('common.projectInquiry')}</option>
+            <option value="partnership">{t('common.partnership')}</option>
+            <option value="general-information">{t('common.generalInfo')}</option>
+            <option value="careers">{t('common.careers')}</option>
+            <option value="investor-relations">{t('common.investorRelations')}</option>
+            <option value="media-inquiry">{t('common.mediaInquiry')}</option>
+            <option value="other">{t('common.other')}</option>
           </select>
         </div>
 
         <div className={styles.formGroup}>
-          <label htmlFor="message">Message *</label>
+          <label htmlFor="message">{t('common.message')} *</label>
           <textarea
             id="message"
             name="message"
@@ -90,7 +93,7 @@ export default function ContactForm({ className = '' }) {
             onChange={handleChange}
             rows="5"
             className={`${styles.textarea} ${errors.message ? styles.error : ''}`}
-            placeholder="Tell us about your project..."
+            placeholder={t('common.tellUsAbout')}
             required
           />
           {errors.message && <span className={styles.errorMessage}>{errors.message}</span>}
@@ -103,7 +106,7 @@ export default function ContactForm({ className = '' }) {
           disabled={isSubmitting}
           className={styles.submitButton}
         >
-          {isSubmitting ? 'Sending...' : 'Send Message'}
+          {isSubmitting ? t('common.sending') : t('common.sendMessage')}
         </Button>
       </form>
     </Card>

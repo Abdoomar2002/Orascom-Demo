@@ -4,6 +4,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import styles from './page.module.css';
 import Carousel from '../components/Carousel';
 import AnimatedSection from '../components/AnimatedSection';
@@ -35,6 +36,7 @@ export default function Home() {
   const [isClient, setIsClient] = useState(false);
   const scrollRef = useHorizontalScroll();
   const newsSectionRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setIsClient(true);
@@ -101,26 +103,18 @@ export default function Home() {
               <div className="col-12 col-lg-4 pt-5 pb-4 pb-lg-5 mt-3 mt-lg-5 mb-3 mb-lg-5">
                 <div className="section-data" id="who-we-are-data">
                   <h1>
-                    <span>WHO WE ARE</span>
+                    <span>{t('home.whoWeAre.title')}</span>
                   </h1>
-                  <h2 className="break-title mb-lg-5">At a Glance</h2>
+                  <h2 className="break-title mb-lg-5">{t('home.whoWeAre.subtitle')}</h2>
                   <p>
-                    Orascom Construction PLC is a leading global engineering and
-                    construction contractor primarily focused on infrastructure,
-                    industrial and high-end commercial projects in the Middle
-                    East, Africa, and the United States.
+                    {t('home.whoWeAre.description1')}
                   </p>
                   <p>
-                    Orascom Construction also develops and invests in
-                    concessions, owns 50% of BESIX Group, and holds a building
-                    materials, facility management and equipment services
-                    portfolio. The Group has consistently ranked among the
-                    world's top contractors and is dual listed in the UAE and
-                    Egypt.
+                    {t('home.whoWeAre.description2')}
                   </p>
                   <div className="mt-4 mt-lg-5">
                     <a className="cta secondary" href="/about">
-                      <span>Explore</span>
+                      <span>{t('home.whoWeAre.cta')}</span>
                     </a>
                   </div>
                 </div>
@@ -170,9 +164,9 @@ export default function Home() {
                 id="newsroom-data"
               >
                 <h1>
-                  <span>newsroom</span>
+                  <span>{t('home.newsroom.title')}</span>
                 </h1>
-                <h2>Our Latest Updates</h2>
+                <h2>{t('home.newsroom.subtitle')}</h2>
               </div>
             </div>
             <div
@@ -372,8 +366,8 @@ export default function Home() {
    <section className={`${styles.homeServices} home-services`} id="home-services">
           <div className={styles.centerDiv}>
             <div className={`${styles.sectionData} section-data`} id="services-data">
-              <h1><span>what we do</span></h1>
-              <h2>Services</h2>
+              <h1><span>{t('home.services.title')}</span></h1>
+              <h2>{t('home.services.subtitle')}</h2>
             </div>
             <div className={styles.homeServicesContent}>
               <div className={styles.homeServicesContentImage}>
@@ -381,23 +375,23 @@ export default function Home() {
               </div>
               <ul className={styles.homeServicesUnits}>
                 <li>
-                  <h1>Infrastructure</h1>
+                  <h1>{t('home.services.infrastructure')}</h1>
                   <Link href="/services" />
                 </li>
                 <li>
-                  <h1>Power & Energy</h1>
+                  <h1>{t('home.services.powerEnergy')}</h1>
                   <Link href="/services" />
                 </li>
                 <li>
-                  <h1>Industrial</h1>
+                  <h1>{t('home.services.industrial')}</h1>
                   <Link href="/services" />
                 </li>
                 <li>
-                  <h1>Commercial</h1>
+                  <h1>{t('home.services.commercial')}</h1>
                   <Link href="/services" />
                 </li>
                 <li>
-                  <h1>Residential</h1>
+                  <h1>{t('home.services.residential')}</h1>
                   <Link href="/services" />
                 </li>
               </ul>
@@ -412,8 +406,8 @@ export default function Home() {
         <section className={`${styles.featuredProjects} featured-projects dark`} id="featured-projects">
           <div className={styles.centerDiv}>
             <div className={`${styles.sectionData} section-data`} id="featured-projects-data">
-              <h1><span>featured projects</span></h1>
-              <h2>Our Work</h2>
+              <h1><span>{t('home.featuredProjects.title')}</span></h1>
+              <h2>{t('home.featuredProjects.subtitle')}</h2>
             </div>
           </div>
           <div className={styles.projectsSlider}>

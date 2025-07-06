@@ -1,10 +1,14 @@
+"use client"
 import Link from 'next/link'
 import Image from 'next/image'
 import { siteConfig } from '@/lib/constants/site-config'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 import styles from './Footer.module.css'
 
 // Single Responsibility: Handle footer display and contact information
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -20,8 +24,7 @@ export default function Footer() {
               />
             </div>
             <p className={styles.description}>
-              A leading global engineering and construction contractor primarily focused on infrastructure, 
-              industrial and high-end commercial projects.
+              {t('footer.description')}
             </p>
             <div className={styles.socialLinks}>
               <a href={siteConfig.links.facebook} target="_blank" rel="noopener noreferrer">
@@ -37,47 +40,47 @@ export default function Footer() {
           </div>
 
           <div className={styles.footerSection}>
-            <h3>Quick Links</h3>
+            <h3>{t('footer.quickLinks')}</h3>
             <ul className={styles.footerLinks}>
-              <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/services">Services</Link></li>
-              <li><Link href="/portfolio">Portfolio</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
+              <li><Link href="/about">{t('footer.aboutUs')}</Link></li>
+              <li><Link href="/services">{t('footer.services')}</Link></li>
+              <li><Link href="/portfolio">{t('footer.portfolio')}</Link></li>
+              <li><Link href="/contact">{t('footer.contact')}</Link></li>
             </ul>
           </div>
 
           <div className={styles.footerSection}>
-            <h3>Services</h3>
+            <h3>{t('footer.services')}</h3>
             <ul className={styles.footerLinks}>
-              <li><Link href="/services">Infrastructure</Link></li>
-              <li><Link href="/services">Power & Energy</Link></li>
-              <li><Link href="/services">Industrial</Link></li>
-              <li><Link href="/services">Commercial</Link></li>
-              <li><Link href="/services">Residential</Link></li>
+              <li><Link href="/services">{t('footer.infrastructure')}</Link></li>
+              <li><Link href="/services">{t('footer.powerEnergy')}</Link></li>
+              <li><Link href="/services">{t('footer.industrial')}</Link></li>
+              <li><Link href="/services">{t('footer.commercial')}</Link></li>
+              <li><Link href="/services">{t('footer.residential')}</Link></li>
             </ul>
           </div>
 
           <div className={styles.footerSection}>
-            <h3>Contact</h3>
+            <h3>{t('footer.contact')}</h3>
             <div className={styles.contactInfo}>
               <p>
                 {siteConfig.contact.address.street}<br />
                 {siteConfig.contact.address.suite}<br />
                 {siteConfig.contact.address.city}
               </p>
-              <p>Phone: {siteConfig.contact.phone}</p>
-              <p>Email: {siteConfig.contact.email}</p>
+              <p>{t('footer.phone')}: {siteConfig.contact.phone}</p>
+              <p>{t('footer.email')}: {siteConfig.contact.email}</p>
             </div>
           </div>
         </div>
 
         <div className={styles.footerBottom}>
           <div className={styles.copyright}>
-            <p>&copy; 2025 {siteConfig.name}. All rights reserved.</p>
+            <p>{t('footer.copyright')}</p>
           </div>
           <div className={styles.legalLinks}>
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms of Service</Link>
+            <Link href="/privacy">{t('footer.privacyPolicy')}</Link>
+            <Link href="/terms">{t('footer.termsOfService')}</Link>
           </div>
         </div>
       </div>

@@ -1,9 +1,12 @@
 "use client"
 // Contact Page - Orascom Construction
 
+import { useLanguage } from '@/lib/i18n/LanguageContext';
 import ContactForm from '@/components/forms/ContactForm'
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <div className="contact-page">
       <style jsx>{`
@@ -112,33 +115,33 @@ export default function Contact() {
       `}</style>
 
       <div className="hero-section">
-        <h1>Contact Us</h1>
-        <p>Get in touch with our team for any inquiries or project discussions</p>
+        <h1>{t('nav.contact')}</h1>
+        <p>{t('common.contactSubtitle')}</p>
       </div>
 
       <div className="contact-content">
         <div className="contact-info">
-          <h2>Get In Touch</h2>
+          <h2>{t('common.getInTouch')}</h2>
           
           <div className="info-item">
-            <h3>Address</h3>
+            <h3>{t('common.address')}</h3>
             <p>2005A Nile City Towers<br />
             South Tower, Corniche El Nil<br />
             Ramlet Beaulac, Cairo 11221, Egypt</p>
           </div>
           
           <div className="info-item">
-            <h3>Phone</h3>
+            <h3>{t('common.phone')}</h3>
             <p>+20 2 2461 8000</p>
           </div>
           
           <div className="info-item">
-            <h3>Email</h3>
+            <h3>{t('common.email')}</h3>
             <p>info@orascom.com</p>
           </div>
           
           <div className="social-info">
-            <h3>Follow Us</h3>
+            <h3>{t('common.followUs')}</h3>
             <div className="social-links">
               <a href="https://www.facebook.com/OrascomConstructionLtd/" className="social-link" target="_blank" rel="noopener noreferrer">Facebook</a>
               <a href="https://www.instagram.com/orascomconstruction/" className="social-link" target="_blank" rel="noopener noreferrer">Instagram</a>

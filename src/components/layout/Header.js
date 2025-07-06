@@ -4,20 +4,23 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { siteConfig } from '@/lib/constants/site-config'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher'
 import styles from './Header.module.css'
-
-const NAV = [
-  { name: 'ABOUT US', href: '/about' },
-  { name: 'SERVICES', href: '/services' },
-  { name: 'ACTIVITIES', href: '/#activities' },
-  { name: 'PROJECTS', href: '/#featured-projects' },
-  { name: 'CONTACT', href: '/contact' },
-]
 
 // Single Responsibility: Handle header/navigation display and interaction
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSubmenu, setActiveSubmenu] = useState(null)
+  const { t, isRTL } = useLanguage()
+
+  const NAV = [
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.services'), href: '/services' },
+    { name: t('nav.activities'), href: '/#activities' },
+    { name: t('nav.projects'), href: '/#featured-projects' },
+    { name: t('nav.contact'), href: '/contact' },
+  ]
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -28,7 +31,6 @@ export default function Header() {
   }
 
   return (
-
     <header className={styles.header}>
       <div className={styles.inner}>
         <div className={styles.logoNav}>
@@ -50,9 +52,11 @@ export default function Header() {
               </Link>
             ))}
           </nav>
+          <div className={styles.languageContainer}>
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </header>
-           
   )
 } 
