@@ -13,18 +13,40 @@ import useHorizontalScroll from '../hooks/useHorizontalScroll';
 import Activities from '../components/sections/Activities';
 
 
+
 const featuredProjects = [
   {
+    id: 1,
     title: "Bahr El Baqr Wastewater Treatment Plant",
     image: "/landing1.jpg",
     href: "/projects/bahr-el-baqr",
   },
   {
+    id: 2,
     title: "High-Speed Rail",
     image: "/landing2.jpg",
     href: "/projects/high-speed-rail",
   },
   {
+    id: 3,
+    title: "Grand Egyptian Museum",
+    image: "/landing3.jpg",
+    href: "/projects/grand-egyptian-museum",
+  },
+  {
+    id: 4,
+    title: "Bahr El Baqr Wastewater Treatment Plant",
+    image: "/landing1.jpg",
+    href: "/projects/bahr-el-baqr",
+  },
+  {
+    id: 5,
+    title: "High-Speed Rail",
+    image: "/landing2.jpg",
+    href: "/projects/high-speed-rail",
+  },
+  {
+    id: 6,
     title: "Grand Egyptian Museum",
     image: "/landing3.jpg",
     href: "/projects/grand-egyptian-museum",
@@ -35,7 +57,9 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [isClient, setIsClient] = useState(false);
   const scrollRef = useHorizontalScroll();
+  const [currentImage, setCurrentImage] = useState("1.jpg");
   const newsSectionRef = useRef(null);
+
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -362,36 +386,92 @@ export default function Home() {
           </div>
         </section>
 
-     {/* Services Section */}
-   <section className={`${styles.homeServices} home-services`} id="home-services">
+        {/* Services Section */}
+        <section
+          className={`${styles.homeServices} home-services`}
+          id="home-services"
+        >
           <div className={styles.centerDiv}>
             <div className={`${styles.sectionData} section-data`} id="services-data">
               <h1><span>{t('home.services.title')}</span></h1>
               <h2>{t('home.services.subtitle')}</h2>
+
             </div>
             <div className={styles.homeServicesContent}>
               <div className={styles.homeServicesContentImage}>
-                <img alt="Services Background" src="/services.jpg" />
+                <img
+                  alt="Services Background"
+                  src={"/wp-content/uploads/Services/1.jpg"}
+                  className={currentImage === "1.jpg" ? styles.activeImage : ""}
+                />
+                <img
+                  alt="Services Background"
+                  src={"/wp-content/uploads/Services/2.jpg"}
+                  className={currentImage == "2.jpg" ? styles.activeImage : ""}
+                />{" "}
+                <img
+                  alt="Services Background"
+                  src={"/wp-content/uploads/Services/3.jpg"}
+                  className={currentImage == "3.jpg" ? styles.activeImage : ""}
+                />{" "}
+                <img
+                  alt="Services Background"
+                  src={"/wp-content/uploads/Services/4.jpg"}
+                  className={currentImage == "4.jpg" ? styles.activeImage : ""}
+                />{" "}
+                <img
+                  alt="Services Background"
+                  src={"/wp-content/uploads/Services/5.jpg"}
+                  className={currentImage == "5.jpg" ? styles.activeImage : ""}
+                />
               </div>
               <ul className={styles.homeServicesUnits}>
-                <li>
-                  <h1>{t('home.services.infrastructure')}</h1>
+                <li
+                  className={
+                    currentImage === "1.jpg" ? styles.activeListItem : ""
+                  }
+                  onMouseEnter={() => {
+                    setCurrentImage("1.jpg");
+                    console.log("1.jpg");
+                  }}
+                >
+                  <h1>Infrastructure</h1>
                   <Link href="/services" />
                 </li>
-                <li>
-                  <h1>{t('home.services.powerEnergy')}</h1>
+                <li
+                  className={
+                    currentImage === "2.jpg" ? styles.activeListItem : ""
+                  }
+                  onMouseEnter={() => setCurrentImage("2.jpg")}
+                >
+                  <h1>Power & Energy</h1>
                   <Link href="/services" />
                 </li>
-                <li>
-                  <h1>{t('home.services.industrial')}</h1>
+                <li
+                  className={
+                    currentImage === "3.jpg" ? styles.activeListItem : ""
+                  }
+                  onMouseEnter={() => setCurrentImage("3.jpg")}
+                >
+                  <h1>Industrial</h1>
                   <Link href="/services" />
                 </li>
-                <li>
-                  <h1>{t('home.services.commercial')}</h1>
+                <li
+                  className={
+                    currentImage === "4.jpg" ? styles.activeListItem : ""
+                  }
+                  onMouseEnter={() => setCurrentImage("4.jpg")}
+                >
+                  <h1>Commercial</h1>
                   <Link href="/services" />
                 </li>
-                <li>
-                  <h1>{t('home.services.residential')}</h1>
+                <li
+                  className={
+                    currentImage === "5.jpg" ? styles.activeListItem : ""
+                  }
+                  onMouseEnter={() => setCurrentImage("5.jpg")}
+                >
+                  <h1>Residential</h1>
                   <Link href="/services" />
                 </li>
               </ul>
@@ -403,17 +483,30 @@ export default function Home() {
         <Activities />
 
         {/* Featured Projects Section */}
-        <section className={`${styles.featuredProjects} featured-projects dark`} id="featured-projects">
+        <section
+          className={`${styles.featuredProjects} p-5 featured-projects dark`}
+          id="featured-projects"
+        >
           <div className={styles.centerDiv}>
-            <div className={`${styles.sectionData} section-data`} id="featured-projects-data">
-              <h1><span>{t('home.featuredProjects.title')}</span></h1>
-              <h2>{t('home.featuredProjects.subtitle')}</h2>
+
+            <div
+              className={`${styles.sectionData} section-data`}
+              id="featured-projects-data"
+            >
+              <h1>
+                <span>featured projects</span>
+              </h1>
+              <h2>Our Work</h2>
             </div>
           </div>
-          <div className={styles.projectsSlider}>
-            <div className="swiper-wrapper">
-              {featuredProjects.map(project => (
-                <Link className={styles.projectUnit} href={project.href} key={project.title}>
+          <div className={styles.projectsSlider + styles.scrollable + " gap-5"}>
+            <div className={"swiper-wrapper gap-5 py-2 " + styles.scrollable}>
+              {featuredProjects.map((project) => (
+                <Link
+                  className={styles.projectUnit}
+                  href={project.href}
+                  key={project.id}
+                >
                   <img alt={project.title} src={project.image} />
                   <div className={styles.projectUnitDataHolder}>
                     <h1>{project.title}</h1>
@@ -425,12 +518,13 @@ export default function Home() {
           <div className={styles.centerDiv}>
             <div className="row no-gutters align-items-md-start mt-5 mb-5 pb-5">
               <div className="col-8 col-xlg-10 offset-0 offset-lg-2 offset-lg-1 d-flex justify-content-left justify-content-lg-center">
-                <Link className={`${styles.cta} cta white`} href="/projects"><span>View All Projects</span></Link>
+                <Link className={`${styles.cta} cta white`} href="/projects">
+                  <span>View All Projects</span>
+                </Link>
               </div>
             </div>
           </div>
         </section>
-
       </main>
     </div>
   );

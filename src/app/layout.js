@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/layout/Layout";
-import Head from "next/head";
+
 import Script from "next/script";
 import { LanguageProvider } from "@/lib/i18n/LanguageContext";
 
@@ -36,6 +36,7 @@ export default function RootLayout({ children }) {
           <Layout>{children}</Layout>
         </LanguageProvider>
         
+
         {/* Load external dependencies first */}
         <Script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" />
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" />
@@ -43,24 +44,24 @@ export default function RootLayout({ children }) {
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js" />
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js" />
         <Script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js" />
-        
+
         {/* Load local utility libraries */}
         <Script src="/lib/bodyScrollLock.min.js" />
         <Script src="/lib/utils.js" />
         <Script src="/lib/utls.js" />
-        
+
         {/* Load local animation libraries */}
         <Script src="/lib/TweenMax.min.js" />
         <Script src="/lib/ScrollMagic.min.js" />
         <Script src="/lib/animation.gsap.min.js" />
         <Script src="/lib/debug.addIndicators.min.js" />
         <Script src="/lib/vivus.min.js" />
-        
+
         {/* Load local components */}
         <Script src="/lib/cursor.js" />
         <Script src="/lib/distortion.js" />
         <Script src="/lib/sticky.js" />
-        
+
         {/* Load page-specific scripts */}
         <Script src="/lib/main-dist.js" />
         <Script src="/lib/menu.js" />
