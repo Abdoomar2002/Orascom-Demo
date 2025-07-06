@@ -16,7 +16,20 @@
   text-align: center;
   margin-bottom: 2.5rem;
 }
+.sectionData h1 span {
+  letter-spacing: 5px;
+  line-height: normal;
+  color: #007bff;
+}
 
+.sectionData h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
 .activitiesContent {
   margin-bottom: 2.5rem;
 }
@@ -30,13 +43,13 @@
 .activityCard {
   background: #fff;
   border-radius: 1rem;
-  box-shadow: 0 2px 12px rgba(0,62,126,0.08);
+  box-shadow: 0 2px 12px rgba(0, 62, 126, 0.08);
   padding: 2rem 1.2rem;
   text-align: center;
   transition: box-shadow 0.2s, transform 0.2s;
 }
 .activityCard:hover {
-  box-shadow: 0 8px 32px rgba(0,62,126,0.13);
+  box-shadow: 0 8px 32px rgba(0, 62, 126, 0.13);
   transform: translateY(-4px) scale(1.02);
 }
 .activityIcon {
@@ -49,13 +62,13 @@
   justify-content: center;
   margin: 0 auto 1rem auto;
   font-size: 2rem;
-  color: #003E7E;
-  border: 2px solid #003E7E;
+  color: #003e7e;
+  border: 2px solid #003e7e;
 }
 .activityTitle {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #003E7E;
+  color: #003e7e;
   margin-bottom: 0.7rem;
 }
 .activityText {
@@ -83,4 +96,4 @@
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
-} 
+}
